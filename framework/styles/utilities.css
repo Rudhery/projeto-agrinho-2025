@@ -1,0 +1,412 @@
+/**
+ * 🎨 AGRI-FRAMEWORK - Utilities
+ * Classes utilitárias com naming semântico
+ * Espaçamento + Cores + Display + Alinhamento
+ */
+
+/* 📏 CLASSES DE ESPAÇAMENTO */
+/* Margin Top */
+.mt-2 {
+	margin-top: var(--space-2);
+}
+.mt-4 {
+	margin-top: var(--space-4);
+}
+.mt-6 {
+	margin-top: var(--space-6);
+}
+.mt-8 {
+	margin-top: var(--space-8);
+}
+
+/* Margin Bottom */
+.mb-2 {
+	margin-bottom: var(--space-2);
+}
+.mb-4 {
+	margin-bottom: var(--space-4);
+}
+.mb-6 {
+	margin-bottom: var(--space-6);
+}
+.mb-8 {
+	margin-bottom: var(--space-8);
+}
+
+/* Padding */
+.p-2 {
+	padding: var(--space-2);
+}
+.p-4 {
+	padding: var(--space-4);
+}
+.p-6 {
+	padding: var(--space-6);
+}
+.p-8 {
+	padding: var(--space-8);
+}
+
+/* Padding X e Y */
+.px-4 {
+	padding-left: var(--space-4);
+	padding-right: var(--space-4);
+}
+.px-6 {
+	padding-left: var(--space-6);
+	padding-right: var(--space-6);
+}
+.py-4 {
+	padding-top: var(--space-4);
+	padding-bottom: var(--space-4);
+}
+.py-6 {
+	padding-top: var(--space-6);
+	padding-bottom: var(--space-6);
+}
+.py-8 {
+	padding-top: var(--space-8);
+	padding-bottom: var(--space-8);
+}
+
+/* 🌈 CORES TEMÁTICAS PRINCIPAIS */
+/* Text Colors */
+.text-campo {
+	color: var(--campo-verde);
+}
+.text-cidade {
+	color: var(--cidade-azul);
+}
+.text-harvest {
+	color: var(--harvest-dourado);
+}
+.text-tech {
+	color: var(--tech-roxo);
+}
+.text-neutral {
+	color: var(--tech-cinza);
+}
+.text-dark {
+	color: var(--preto-suave);
+}
+
+/* NEW: Cores Complementares */
+.text-terra {
+	color: var(--terra-marrom);
+}
+.text-ceu {
+	color: var(--ceu-azul);
+}
+.text-sol {
+	color: var(--sol-amarelo);
+}
+
+/* NEW: Cores de Status */
+.text-sucesso {
+	color: var(--sucesso-verde);
+}
+.text-alerta {
+	color: var(--alerta-amarelo);
+}
+.text-erro {
+	color: var(--erro-vermelho);
+}
+.text-info {
+	color: var(--info-azul);
+}
+
+/* Background Colors */
+.bg-campo {
+	background-color: var(--campo-verde);
+}
+.bg-campo-light {
+	background-color: var(--campo-verde-light);
+}
+.bg-campo-soft {
+	background-color: var(--campo-verde-soft);
+}
+.bg-cidade {
+	background-color: var(--cidade-azul);
+}
+.bg-cidade-soft {
+	background-color: var(--cidade-azul-soft);
+}
+.bg-harvest {
+	background-color: var(--harvest-dourado);
+}
+.bg-harvest-soft {
+	background-color: var(--harvest-dourado-soft);
+}
+.bg-tech {
+	background-color: var(--tech-roxo);
+}
+.bg-light {
+	background-color: var(--cinza-claro);
+}
+.bg-white {
+	background-color: var(--branco);
+}
+
+/* NEW: Backgrounds Complementares */
+.bg-terra {
+	background-color: var(--terra-marrom);
+}
+.bg-terra-soft {
+	background-color: var(--terra-marrom-soft);
+}
+.bg-ceu {
+	background-color: var(--ceu-azul);
+}
+.bg-ceu-soft {
+	background-color: var(--ceu-azul-soft);
+}
+.bg-sol {
+	background-color: var(--sol-amarelo);
+}
+.bg-sol-soft {
+	background-color: var(--sol-amarelo-soft);
+}
+
+/* NEW: Backgrounds de Status */
+.bg-sucesso {
+	background-color: var(--sucesso-verde);
+}
+.bg-alerta {
+	background-color: var(--alerta-amarelo);
+}
+.bg-erro {
+	background-color: var(--erro-vermelho);
+}
+.bg-info {
+	background-color: var(--info-azul);
+}
+
+/* NEW: Classes de Gradientes */
+.bg-gradient-campo {
+	background: var(--gradient-campo);
+}
+.bg-gradient-cidade {
+	background: var(--gradient-cidade);
+}
+.bg-gradient-harvest {
+	background: var(--gradient-harvest);
+}
+.bg-gradient-terra {
+	background: var(--gradient-terra);
+}
+.bg-gradient-ceu {
+	background: var(--gradient-ceu);
+}
+
+/* 📱 CLASSES DE DISPLAY */
+.flex {
+	display: flex;
+}
+.grid {
+	display: grid;
+}
+.block {
+	display: block;
+}
+.inline-block {
+	display: inline-block;
+}
+.hidden {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.hidden-mobile {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.hidden-desktop {
+		display: none;
+	}
+}
+
+/* 🎯 CLASSES DE ALINHAMENTO FLEXBOX */
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.flex-start {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.flex-end {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-col-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/* NEW: Flex Wrap */
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-nowrap {
+	flex-wrap: nowrap;
+}
+
+/* 📐 CLASSES DE ALINHAMENTO DE TEXTO */
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+
+/* 🌊 CLASSES DE WIDTH E HEIGHT */
+.w-full {
+	width: 100%;
+}
+.h-full {
+	height: 100%;
+}
+.w-auto {
+	width: auto;
+}
+.h-auto {
+	height: auto;
+}
+
+/* NEW: Larguras específicas */
+.w-1-2 {
+	width: 50%;
+}
+.w-1-3 {
+	width: 33.333%;
+}
+.w-2-3 {
+	width: 66.666%;
+}
+
+/* 📊 CLASSES DE POSICIONAMENTO */
+.relative {
+	position: relative;
+}
+.absolute {
+	position: absolute;
+}
+.fixed {
+	position: fixed;
+}
+.sticky {
+	position: sticky;
+}
+
+/* 🎭 CLASSES DE EFEITOS VISUAIS */
+.shadow-sm {
+	box-shadow: var(--shadow-sm);
+}
+.shadow-md {
+	box-shadow: var(--shadow-md);
+}
+.shadow-lg {
+	box-shadow: var(--shadow-lg);
+}
+.shadow-xl {
+	box-shadow: var(--shadow-xl);
+}
+.shadow-2xl {
+	box-shadow: var(--shadow-2xl);
+}
+
+.rounded {
+	border-radius: var(--radius-md);
+}
+.rounded-lg {
+	border-radius: var(--radius-lg);
+}
+.rounded-xl {
+	border-radius: var(--radius-xl);
+}
+.rounded-2xl {
+	border-radius: var(--radius-2xl);
+}
+.rounded-full {
+	border-radius: 50%;
+}
+
+/* 🔄 CLASSES DE OVERFLOW */
+.overflow-hidden {
+	overflow: hidden;
+}
+.overflow-auto {
+	overflow: auto;
+}
+
+/* ⚡ CLASSES DE TRANSIÇÃO */
+.transition {
+	transition: all var(--transition-normal);
+}
+.transition-fast {
+	transition: all var(--transition-fast);
+}
+.transition-slow {
+	transition: all var(--transition-slow);
+}
+.transition-bounce {
+	transition: all var(--transition-bounce);
+}
+
+/* 🎯 CLASSES DE CURSOR */
+.cursor-pointer {
+	cursor: pointer;
+}
+.cursor-default {
+	cursor: default;
+}
+
+/* NEW: Classes de Opacidade */
+.opacity-0 {
+	opacity: 0;
+}
+.opacity-50 {
+	opacity: 0.5;
+}
+.opacity-75 {
+	opacity: 0.75;
+}
+.opacity-100 {
+	opacity: 1;
+}
+
+/* NEW: Classes de Z-Index */
+.z-10 {
+	z-index: 10;
+}
+.z-20 {
+	z-index: 20;
+}
+.z-50 {
+	z-index: 50;
+}

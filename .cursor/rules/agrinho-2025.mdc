@@ -1,0 +1,182 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## 📋 **REGRAS DE DESENVOLVIMENTO - PROJETO AGRICONNECT**
+*Diretrizes para IA assistente*
+
+---
+
+### **🎯 CONTEXTO DO PROJETO:**
+- **Concurso:** Agrinho 2025 - Categoria Programação (HTML/CSS)
+- **Tema obrigatório:** "Festejando a conexão campo cidade"
+- **Objetivo:** Site one-page conectando produtores rurais e consumidores urbanos
+- **Prazo submissão:** 22/06/2025 às 23h59
+
+---
+
+### **💻 RESTRIÇÕES TÉCNICAS RÍGIDAS:**
+
+#### **✅ TECNOLOGIAS PERMITIDAS:**
+```
+- HTML5 semântico puro
+- CSS3 puro (Grid, Flexbox, Custom Properties, Animations)
+- SVG inline (criado pelo usuário)
+- Emojis Unicode como ícones
+- Fontes do sistema (system fonts stack)
+```
+
+#### **❌ TECNOLOGIAS PROIBIDAS:**
+```
+- JavaScript (qualquer forma)
+- Frameworks CSS (Bootstrap, Tailwind, Bulma, etc.)
+- CDNs externos (Google Fonts, Font Awesome, etc.)
+- Bibliotecas CSS (Normalize, Reset, Animate.css)
+- Recursos externos (APIs, imagens externas)
+```
+
+---
+
+### **🏗️ ARQUITETURA OBRIGATÓRIA:**
+
+#### **📁 Estrutura de arquivos:**
+```
+projeto/
+├── index.html (único arquivo HTML)
+├── css/
+│   ├── variables.css (custom properties)
+│   ├── components.css (botões, cards, etc.)
+│   ├── utilities.css (classes auxiliares)
+│   ├── animations.css (keyframes e transitions)
+│   └── main.css (layout principal)
+```
+
+#### **📋 Seções HTML obrigatórias:**
+```html
+1. <header> - Logo + navegação + toggle tema
+2. <section class="hero"> - Impacto visual principal
+3. <section class="processo"> - Como funciona (3 etapas)
+4. <section class="impacto"> - Resultados e benefícios
+5. <footer> - Call to action final
+```
+
+---
+
+### **🎨 DIRETRIZES DE DESIGN:**
+
+#### **🌈 Paleta de cores semântica:**
+```css
+:root {
+  --campo-green: #2E7D32;
+  --cidade-blue: #1976D2;
+  --harvest-gold: #FFA726;
+  --earth-brown: #8D6E63;
+  --tech-purple: #7B1FA2;
+  --neutral-white: #FFFFFF;
+  --text-dark: #212121;
+  --text-light: #757575;
+}
+```
+
+#### **📱 Responsividade obrigatória:**
+```css
+/* Mobile first approach */
+@media (min-width: 768px) { /* Tablet */ }
+@media (min-width: 1024px) { /* Desktop */ }
+@media (min-width: 1440px) { /* Large desktop */ }
+```
+
+---
+
+### **✨ FUNCIONALIDADES REQUERIDAS:**
+
+#### **🔄 Toggle tema (campo/cidade):**
+```css
+/* Implementar com :checked pseudo-class */
+input[type="checkbox"]:checked ~ .tema-cidade { }
+```
+
+#### **🎭 Animações CSS:**
+```css
+/* Micro-interações em hover */
+/* Animações de entrada suaves */
+/* Transições entre seções */
+/* Loading animations */
+```
+
+#### **📱 Interatividade sem JS:**
+```css
+/* Hover effects elaborados */
+/* Focus states para acessibilidade */
+/* Target pseudo-class para navegação */
+```
+
+---
+
+### **📊 CRITÉRIOS DE QUALIDADE:**
+
+#### **⚡ Performance:**
+- CSS minificado para produção
+- Máximo 3 segundos de carregamento
+- Zero dependências externas
+- Otimização de animações (60fps)
+
+#### **♿ Acessibilidade:**
+- Contraste mínimo 4.5:1
+- Alt texts em imagens SVG
+- Navegação por teclado
+- Semantic HTML tags
+
+#### **🎯 SEO básico:**
+- Meta tags apropriadas
+- Estrutura heading hierárquica (h1, h2, h3)
+- Atributos lang e charset
+- Description meta tag
+
+---
+
+### **🚫 RESTRIÇÕES DE CONTEÚDO:**
+
+#### **📝 Texto obrigatório:**
+- Linguagem portuguesa brasileira
+- Foco no agronegócio paranaense
+- Tom profissional mas acessível
+- Máximo 500 palavras total
+
+#### **🖼️ Recursos visuais:**
+- Apenas SVG inline criado pelo usuário
+- Emojis como ícones decorativos
+- Gradientes CSS para backgrounds
+- Box-shadows para profundidade
+
+---
+
+### **🔍 VALIDAÇÃO FINAL:**
+
+#### **✅ Checklist técnico:**
+```
+□ HTML5 válido (W3C validator)
+□ CSS3 válido (W3C CSS validator)
+□ Funciona em Chrome, Firefox, Safari
+□ Responsivo em 320px a 1920px
+□ Zero console errors
+□ Performance Lighthouse > 90
+```
+
+#### **📋 Checklist conteúdo:**
+```
+□ Tema "conexão campo cidade" evidente
+□ Storytelling claro e emocional
+□ Call to action efetivo
+□ Informações sobre agronegócio corretas
+□ Linguagem adequada ao público
+```
+
+---
+
+### **🎯 OBJETIVO DE AVALIAÇÃO:**
+Criar um projeto que demonstre **domínio técnico avançado** em CSS puro, **criatividade visual** excepcional e **aderência perfeita** ao tema do concurso, resultando em uma experiência que **emocione os juízes** e destaque-se entre centenas de projetos similares.
+
+**Lembre-se:** Simplicidade técnica com execução impecável supera complexidade mal executada.
+

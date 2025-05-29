@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>AGRI-FRAMEWORK v2.0 - Demo Expandida</title>
+		<link
+			rel="stylesheet"
+			href="styles/agri-framework.css"
+		/>
+	</head>
+	<body>
+		<!-- 🌟 HERO SECTION EXPANDIDA -->
+		<section class="agri-hero">
+			<div class="container">
+				<h1 class="mega-title fade-in">AGRI-FRAMEWORK v2.0</h1>
+				<p class="subtitle">
+					Sistema de cores expandido e componentes temáticos
+				</p>
+				<p class="caption mb-8 text-delicate">
+					Nova paleta semântica: Campo • Cidade • Terra • Céu • Sol
+				</p>
+				<div
+					class="flex-center flex-wrap"
+					style="gap: var(--space-4)"
+				>
+					<button class="agri-btn hover-grow">Campo Verde</button>
+					<button class="agri-btn-cidade hover-grow">Cidade Digital</button>
+					<button class="agri-btn-harvest hover-grow">Colheita Dourada</button>
+					<button class="agri-btn-terra hover-grow">Terra Fértil</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- 🎨 NOVA PALETA DE CORES -->
+		<section class="container py-8">
+			<h2 class="hero-title text-center mb-8 text-campo">
+				Nova Paleta Semântica
+			</h2>
+
+			<div class="grid-3 mb-8">
+				<!-- Cores Principais -->
+				<div class="agri-farm-card">
+					<h3 class="section-title text-campo">🌱 Cores do Campo</h3>
+					<div
+						class="flex-wrap"
+						style="gap: var(--space-2); margin-top: var(--space-4)"
+					>
+						<span class="agri-badge">Verde</span>
+						<span class="agri-badge bg-campo-light">Verde Light</span>
+						<span
+							class="agri-badge bg-campo"
+							style="
+								background: var(--campo-verde-soft);
+								color: var(--campo-verde);
+							"
+							>Verde Soft</span
+						>
+					</div>
+				</div>
+
+				<div class="agri-city-card">
+					<h3 class="section-title text-cidade">🏙️ Cores da Cidade</h3>
+					<div
+						class="flex-wrap"
+						style="gap: var(--space-2); margin-top: var(--space-4)"
+					>
+						<span class="agri-badge bg-cidade">Azul</span>
+						<span
+							class="agri-badge agri-badge-custom"
+							style="background: var(--cidade-azul-light)"
+							>Azul Light</span
+						>
+						<span
+							class="agri-badge agri-badge-custom"
+							style="
+								background: var(--cidade-azul-soft);
+								color: var(--cidade-azul);
+							"
+							>Azul Soft</span
+						>
+					</div>
+				</div>
+
+				<div class="agri-harvest-card">
+					<h3 class="section-title text-harvest">🌾 Cores da Colheita</h3>
+					<div
+						class="flex-wrap"
+						style="gap: var(--space-2); margin-top: var(--space-4)"
+					>
+						<span class="agri-badge-alerta">Dourado</span>
+						<span
+							class="agri-badge agri-badge-custom"
+							style="
+								background: var(--harvest-dourado-light);
+								color: var(--preto-suave);
+							"
+							>Dourado Light</span
+						>
+						<span
+							class="agri-badge agri-badge-custom"
+							style="
+								background: var(--harvest-dourado-soft);
+								color: var(--harvest-dourado);
+							"
+							>Dourado Soft</span
+						>
+					</div>
+				</div>
+			</div>
+
+			<!-- Cores Complementares -->
+			<h3 class="section-title text-center mb-6 text-tech">
+				Cores Complementares
+			</h3>
+			<div class="grid-3">
+				<div class="bg-terra-soft p-6 rounded-xl">
+					<h4 class="section-title text-terra">🌍 Terra</h4>
+					<p class="body-text">Cores da terra e solo fértil</p>
+					<div
+						class="flex-wrap"
+						style="gap: var(--space-2); margin-top: var(--space-4)"
+					>
+						<span class="agri-badge-terra">Marrom</span>
+						<span
+							class="agri-badge agri-badge-custom"
+							style="background: var(--terra-marrom-light)"
+							>Marrom Light</span
+						>
+					</div>
+				</div>
+
+				<div class="bg-ceu-soft p-6 rounded-xl">
+					<h4 class="section-title text-ceu">💧 Céu</h4>
+					<p class="body-text">Azul do céu e irrigação</p>
+					<div
+						class="flex-wrap"
+						style="gap: var(--space-2); margin-top: var(--space-4)"
+					>
+						<span
+							class="agri-badge agri-badge-custom"
+							style="background: var(--ceu-azul)"
+							>Céu</span
+						>
+						<span
+							class="agri-badge agri-badge-custom"
+							style="background: var(--ceu-azul-light)"
+							>Céu Light</span
+						>
+					</div>
+				</div>
+
+				<div class="bg-sol-soft p-6 rounded-xl">
+					<h4 class="section-title text-sol">☀️ Sol</h4>
+					<p class="body-text">Energia solar sustentável</p>
+					<div
+						class="flex-wrap"
+						style="gap: var(--space-2); margin-top: var(--space-4)"
+					>
+						<span
+							class="agri-badge agri-badge-custom"
+							style="background: var(--sol-amarelo); color: var(--preto-suave)"
+							>Amarelo</span
+						>
+						<span
+							class="agri-badge agri-badge-custom"
+							style="
+								background: var(--sol-amarelo-light);
+								color: var(--preto-suave);
+							"
+							>Amarelo Light</span
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 🎨 GRADIENTES TEMÁTICOS -->
+		<section class="bg-light py-8">
+			<div class="container">
+				<h2 class="section-title text-center mb-8">Gradientes Temáticos</h2>
+
+				<div class="grid-2 mb-8">
+					<div class="bg-gradient-campo p-8 rounded-2xl text-white text-center">
+						<h3 class="section-title">Gradiente Campo</h3>
+						<p class="body-text">Para seções de agricultura</p>
+					</div>
+
+					<div
+						class="bg-gradient-cidade p-8 rounded-2xl text-white text-center"
+					>
+						<h3 class="section-title">Gradiente Cidade</h3>
+						<p class="body-text">Para seções tecnológicas</p>
+					</div>
+				</div>
+
+				<div class="grid-3">
+					<div class="bg-gradient-harvest p-6 rounded-xl text-center">
+						<h4 class="section-title text-white">Gradiente Colheita</h4>
+					</div>
+					<div class="bg-gradient-terra p-6 rounded-xl text-center">
+						<h4 class="section-title text-white">Gradiente Terra</h4>
+					</div>
+					<div class="bg-gradient-ceu p-6 rounded-xl text-center">
+						<h4 class="section-title text-white">Gradiente Céu</h4>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ➗ NOVO SEPARADOR -->
+		<div class="campo-divider"></div>
+
+		<!-- 📊 SISTEMA DE STATUS E ALERTAS -->
+		<section class="container py-8">
+			<h2 class="hero-title text-center mb-8">Sistema de Status e Alertas</h2>
+
+			<div class="grid-2 mb-8">
+				<div>
+					<h3 class="section-title mb-6">Badges de Status</h3>
+					<div
+						class="flex-wrap"
+						style="gap: var(--space-3)"
+					>
+						<span class="agri-badge-sucesso">Sucesso</span>
+						<span class="agri-badge-alerta">Alerta</span>
+						<span class="agri-badge-erro">Erro</span>
+						<span class="agri-badge-info">Info</span>
+						<span class="agri-badge-terra">Terra</span>
+					</div>
+				</div>
+
+				<div>
+					<h3 class="section-title mb-6">Botões Variados</h3>
+					<div
+						class="flex-wrap"
+						style="gap: var(--space-3)"
+					>
+						<button class="agri-btn">Principal</button>
+						<button class="agri-btn-outline">Outline</button>
+						<button class="agri-btn-cidade">Cidade</button>
+						<button class="agri-btn-harvest">Colheita</button>
+						<button class="agri-btn-terra">Terra</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Alertas -->
+			<h3 class="section-title mb-6">Sistema de Alertas</h3>
+			<div class="agri-alert agri-alert-sucesso">
+				✅ <strong>Sucesso:</strong> Plantio realizado com êxito! Acompanhe o
+				crescimento.
+			</div>
+			<div class="agri-alert agri-alert-alerta">
+				⚠️ <strong>Atenção:</strong> Condições climáticas podem afetar a
+				colheita.
+			</div>
+			<div class="agri-alert agri-alert-erro">
+				❌ <strong>Erro:</strong> Falha na irrigação detectada. Verificar
+				sistema.
+			</div>
+			<div class="agri-alert agri-alert-info">
+				ℹ️ <strong>Informação:</strong> Nova tecnologia de precisão disponível.
+			</div>
+		</section>
+
+		<!-- 🎯 CARDS ESPECIALIZADOS -->
+		<section class="patterned-section py-8">
+			<div class="container">
+				<h2 class="section-title text-center mb-8 text-tech">
+					Cards Especializados
+				</h2>
+
+				<div class="grid-3">
+					<div class="agri-farm-card hover-lift">
+						<h3 class="section-title text-campo">Agricultura de Precisão</h3>
+						<p class="body-text">
+							Sensores IoT monitoram solo e culturas em tempo real.
+						</p>
+						<div class="flex-between mt-6">
+							<span class="agri-badge-sucesso">Ativo</span>
+							<button class="agri-btn">Monitorar</button>
+						</div>
+					</div>
+
+					<div class="agri-city-card hover-lift">
+						<h3 class="section-title text-cidade">Logística Urbana</h3>
+						<p class="body-text">
+							Conectando fazendas aos centros de distribuição urbanos.
+						</p>
+						<div class="flex-between mt-6">
+							<span class="agri-badge-info">Otimizado</span>
+							<button class="agri-btn-cidade">Roteirizar</button>
+						</div>
+					</div>
+
+					<div class="agri-harvest-card hover-lift">
+						<h3 class="section-title text-harvest">Análise de Colheita</h3>
+						<p class="body-text">
+							IA prevê o melhor momento para colheita e qualidade.
+						</p>
+						<div class="flex-between mt-6">
+							<span class="agri-badge-alerta">Pendente</span>
+							<button class="agri-btn-harvest">Analisar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ✨ TIPOGRAFIA EXPANDIDA -->
+		<section class="container py-8">
+			<h2 class="section-title text-center mb-8">Tipografia Expandida</h2>
+
+			<div class="text-center mb-8">
+				<h1 class="mega-title">Mega Título Impactante</h1>
+				<h2 class="hero-title">Hero Title Principal</h2>
+				<h3 class="section-title">Section Title</h3>
+				<h4 class="subtitle">Subtitle Elegante</h4>
+				<p class="body-text">
+					Body text para leitura confortável com espaçamento adequado.
+				</p>
+				<p class="caption text-delicate">
+					Caption delicada para informações secundárias
+				</p>
+			</div>
+		</section>
+
+		<!-- 🎯 CALL TO ACTION APRIMORADO -->
+		<section class="bg-gradient-campo text-white py-8">
+			<div class="container text-center">
+				<h2 class="mega-title mb-4">Framework Completo e Profissional</h2>
+				<p class="subtitle mb-6 opacity-75">
+					Sistema de cores expandido • Componentes especializados • Gradientes
+					temáticos
+				</p>
+				<div
+					class="flex-center flex-wrap"
+					style="gap: var(--space-4)"
+				>
+					<button
+						class="agri-btn hover-grow transition-bounce"
+						style="background: white; color: var(--campo-verde)"
+					>
+						Usar Framework
+					</button>
+					<button
+						class="agri-btn-outline hover-grow"
+						style="border-color: white; color: white"
+					>
+						Ver Documentação
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- 📋 FOOTER EXPANDIDO -->
+		<footer class="bg-preto-suave text-white py-8">
+			<div class="container">
+				<div class="grid-3 mb-8">
+					<div>
+						<h3 class="section-title text-campo mb-4">
+							🌾 AGRI-FRAMEWORK v2.0
+						</h3>
+						<p class="body-text text-delicate">
+							Framework CSS semântico expandido com foco no agronegócio
+							sustentável.
+						</p>
+					</div>
+
+					<div>
+						<h4 class="section-title text-cidade mb-4">🎨 Cores Temáticas</h4>
+						<div
+							class="flex-wrap"
+							style="gap: var(--space-2)"
+						>
+							<span class="agri-badge">Campo</span>
+							<span class="agri-badge bg-cidade">Cidade</span>
+							<span class="agri-badge-terra">Terra</span>
+							<span
+								class="agri-badge"
+								style="background: var(--ceu-azul)"
+								>Céu</span
+							>
+							<span
+								class="agri-badge"
+								style="
+									background: var(--sol-amarelo);
+									color: var(--preto-suave);
+								"
+								>Sol</span
+							>
+						</div>
+					</div>
+
+					<div>
+						<h4 class="section-title text-harvest mb-4">📊 Estatísticas</h4>
+						<div class="text-delicate">
+							<p class="caption mb-2">~350 linhas de CSS</p>
+							<p class="caption mb-2">18 custom properties</p>
+							<p class="caption mb-2">25+ componentes</p>
+							<p class="caption">100% semântico</p>
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="campo-divider"
+					style="margin: var(--space-6) 0"
+				></div>
+
+				<div class="text-center">
+					<p class="caption text-delicate">
+						AGRI-FRAMEWORK • Criado para demonstrar excelência técnica em CSS •
+						Projeto Agrinho 2025 🌱
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			// Scroll animations
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: "0px 0px -50px 0px",
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("visible");
+					}
+				});
+			}, observerOptions);
+
+			document
+				.querySelectorAll(
+					".scroll-fade, .scroll-slide-left, .scroll-slide-right"
+				)
+				.forEach((el) => {
+					observer.observe(el);
+				});
+		</script>
+	</body>
+</html>

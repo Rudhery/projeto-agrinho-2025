@@ -1,0 +1,141 @@
+/**
+ * 🌾 AGRI-FRAMEWORK - Variables
+ * Mini-framework CSS semântico para agronegócio
+ * Sistema de design tokens otimizado para performance
+ */
+
+:root {
+	/* 🌈 CORES SEMÂNTICAS DO AGRONEGÓCIO */
+	--campo-verde: #2d5a3d;
+	--campo-verde-light: #4a7c59;
+	--campo-verde-dark: #1e3d2a;
+	--campo-verde-soft: #e8f5e8; /* NEW: Para backgrounds sutis */
+
+	--cidade-azul: #2563eb;
+	--cidade-azul-light: #60a5fa;
+	--cidade-azul-dark: #1d4ed8;
+	--cidade-azul-soft: #eff6ff; /* NEW: Para seções tecnológicas */
+
+	--harvest-dourado: #f59e0b;
+	--harvest-dourado-light: #fbbf24;
+	--harvest-dourado-dark: #d97706;
+	--harvest-dourado-soft: #fef3c7; /* NEW: Para destaques suaves */
+
+	--tech-roxo: #7c3aed;
+	--tech-roxo-light: #a78bfa;
+	--tech-roxo-dark: #5b21b6;
+	--tech-cinza: #6b7280;
+
+	/* 🌱 CORES COMPLEMENTARES TEMÁTICAS */
+	--terra-marrom: #c2845c; /* FIXED: Cor mais vibrante para terra/solo */
+	--terra-marrom-light: #d49b73;
+	--terra-marrom-dark: #a0633d; /* NEW: Versão escura */
+	--terra-marrom-soft: #f4ede4;
+
+	--ceu-azul: #0ea5e9; /* NEW: Azul céu/irrigação */
+	--ceu-azul-light: #38bdf8;
+	--ceu-azul-soft: #e0f2fe;
+
+	--sol-amarelo: #eab308; /* NEW: Energia solar/sustentável */
+	--sol-amarelo-light: #facc15;
+	--sol-amarelo-soft: #fefce8;
+
+	/* 🎨 NEUTROS ELEGANTES */
+	--branco: #ffffff;
+	--cinza-claro: #f8fafc;
+	--cinza-medio: #e2e8f0;
+	--cinza-escuro: #334155;
+	--preto-suave: #0f172a;
+
+	/* 📊 CORES DE STATUS/FEEDBACK */
+	--sucesso-verde: #10b981; /* NEW: Para mensagens de sucesso */
+	--alerta-amarelo: #f59e0b; /* Reaproveitando harvest */
+	--erro-vermelho: #ef4444; /* NEW: Para erros/alertas */
+	--info-azul: #3b82f6; /* NEW: Para informações */
+
+	/* 📏 SISTEMA DE ESPAÇAMENTO (base 8px) */
+	--space-1: 0.25rem; /* 4px */
+	--space-2: 0.5rem; /* 8px */
+	--space-3: 0.75rem; /* 12px */
+	--space-4: 1rem; /* 16px */
+	--space-6: 1.5rem; /* 24px */
+	--space-8: 2rem; /* 32px */
+	--space-12: 3rem; /* 48px */
+	--space-16: 4rem; /* 64px */
+	--space-20: 5rem; /* 80px - NEW: Para seções grandes */
+
+	/* ✨ TIPOGRAFIA HARMÔNICA */
+	--text-xs: 0.75rem; /* 12px */
+	--text-sm: 0.875rem; /* 14px */
+	--text-base: 1rem; /* 16px */
+	--text-lg: 1.25rem; /* 20px */
+	--text-xl: 1.5rem; /* 24px */
+	--text-2xl: 2rem; /* 32px */
+	--text-3xl: 2.25rem; /* 36px - NEW: Para títulos grandes */
+
+	/* 🔤 PESOS DE FONTE */
+	--font-light: 300; /* NEW: Para textos delicados */
+	--font-normal: 400;
+	--font-medium: 500; /* NEW: Entre normal e semibold */
+	--font-semibold: 600;
+	--font-bold: 700;
+	--font-black: 900; /* NEW: Para títulos impactantes */
+
+	/* 📐 ALTURAS DE LINHA */
+	--leading-tight: 1.2; /* headings */
+	--leading-normal: 1.5; /* body */
+	--leading-relaxed: 1.7; /* reading */
+
+	/* 🎭 SOMBRAS PROGRESSIVAS */
+	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+	--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+	--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* NEW: Sombra dramática */
+
+	/* 🔄 BORDER RADIUS */
+	--radius-sm: 0.25rem; /* 4px */
+	--radius-md: 0.5rem; /* 8px */
+	--radius-lg: 0.75rem; /* 12px */
+	--radius-xl: 1rem; /* 16px */
+	--radius-2xl: 1.5rem; /* 24px - NEW: Para cards especiais */
+
+	/* ⚡ TIMING DE TRANSIÇÕES */
+	--transition-fast: 150ms ease-in-out;
+	--transition-normal: 300ms ease-in-out;
+	--transition-slow: 500ms ease-in-out;
+	--transition-bounce: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55); /* NEW: Efeito bounce */
+
+	/* 📱 BREAKPOINTS */
+	--mobile: 640px;
+	--tablet: 768px;
+	--desktop: 1024px;
+	--container-max: 1200px;
+
+	/* 🎨 GRADIENTES TEMÁTICOS */
+	--gradient-campo: linear-gradient(
+		135deg,
+		var(--campo-verde-dark),
+		var(--campo-verde-light)
+	);
+	--gradient-cidade: linear-gradient(
+		135deg,
+		var(--cidade-azul-dark),
+		var(--cidade-azul-light)
+	);
+	--gradient-harvest: linear-gradient(
+		135deg,
+		var(--harvest-dourado-dark),
+		var(--harvest-dourado-light)
+	);
+	--gradient-terra: linear-gradient(
+		135deg,
+		var(--terra-marrom-dark),
+		var(--terra-marrom-light)
+	);
+	--gradient-ceu: linear-gradient(
+		135deg,
+		var(--ceu-azul),
+		var(--ceu-azul-light)
+	);
+}

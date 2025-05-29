@@ -1,0 +1,550 @@
+/**
+ * 🏗️ AGRI-FRAMEWORK - Components
+ * Componentes base semanticamente organizados
+ * Reset mínimo + Layout System + Core Components
+ */
+
+/* ⚡ RESET MÍNIMO E OTIMIZADO */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: system-ui, -apple-system, sans-serif;
+	line-height: var(--leading-normal);
+	color: var(--preto-suave);
+	background-color: var(--branco);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* 📦 LAYOUT SYSTEM RESPONSIVO */
+.container {
+	width: 100%;
+	max-width: var(--container-max);
+	margin: 0 auto;
+	padding: 0 var(--space-4);
+}
+
+@media (min-width: 768px) {
+	.container {
+		padding: 0 var(--space-6);
+	}
+}
+
+/* 🌐 GRID SYSTEM SIMPLES */
+.grid-2 {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+	.grid-2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.grid-3 {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+	.grid-3 {
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-6);
+	}
+}
+
+@media (min-width: 1024px) {
+	.grid-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* 🃏 AGRI-CARD - Card Base Elegante */
+.agri-card {
+	background: var(--branco);
+	border-radius: var(--radius-lg);
+	padding: var(--space-6);
+	box-shadow: var(--shadow-md);
+	border: 1px solid var(--cinza-medio);
+	transition: all var(--transition-normal);
+}
+
+.agri-card:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+	border-color: var(--campo-verde-light);
+}
+
+/* 🔘 AGRI-BTN - Botão Principal */
+.agri-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--space-3) var(--space-6);
+	background: var(--campo-verde);
+	color: var(--branco);
+	border: none;
+	border-radius: var(--radius-md);
+	font-weight: var(--font-semibold);
+	font-size: var(--text-base);
+	cursor: pointer;
+	transition: all var(--transition-fast);
+	text-decoration: none;
+	gap: var(--space-2);
+}
+
+.agri-btn:hover {
+	background: var(--campo-verde-dark);
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-md);
+}
+
+.agri-btn:active {
+	transform: translateY(0);
+}
+
+/* NEW: Variações de Botões Temáticos */
+.agri-btn-cidade {
+	background: var(--cidade-azul);
+}
+
+.agri-btn-cidade:hover {
+	background: var(--cidade-azul-dark);
+}
+
+.agri-btn-harvest {
+	background: var(--harvest-dourado);
+	color: var(--preto-suave);
+}
+
+.agri-btn-harvest:hover {
+	background: var(--harvest-dourado-dark);
+	color: var(--branco);
+}
+
+.agri-btn-terra {
+	background: var(--terra-marrom);
+}
+
+.agri-btn-terra:hover {
+	background: var(--terra-marrom-light);
+}
+
+/* NEW: Botão Outline */
+.agri-btn-outline {
+	background: transparent;
+	border: 2px solid var(--campo-verde);
+	color: var(--campo-verde);
+}
+
+.agri-btn-outline:hover {
+	background: var(--campo-verde);
+	color: var(--branco);
+}
+
+/* 🏷️ ETIQUETAS SEMÂNTICAS DO AGRONEGÓCIO */
+.etiqueta-harvest {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--harvest-dourado);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* 🎨 CLASSE BASE para etiquetas customizadas */
+.etiqueta-custom {
+	display: inline-flex !important;
+	align-items: center !important;
+	padding: var(--space-1) var(--space-3) !important;
+	font-size: var(--text-xs) !important;
+	font-weight: var(--font-semibold) !important;
+	border-radius: var(--radius-xl) !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.05em !important;
+}
+
+/* 🌱 ETIQUETAS DE STATUS SEMÂNTICAS */
+.etiqueta-crescimento {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--sucesso-verde);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.etiqueta-atencao {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--alerta-amarelo);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.etiqueta-praga {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--erro-vermelho);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.etiqueta-irrigacao {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--info-azul);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.etiqueta-solo {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--terra-marrom);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* 🏷️ AGRI-BADGE - Etiquetas Elegantes */
+.agri-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--harvest-dourado);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* 🎨 CLASSE BASE para badges customizadas */
+.agri-badge-custom {
+	display: inline-flex !important;
+	align-items: center !important;
+	padding: var(--space-1) var(--space-3) !important;
+	font-size: var(--text-xs) !important;
+	font-weight: var(--font-semibold) !important;
+	border-radius: var(--radius-xl) !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.05em !important;
+}
+
+/* NEW: Variações de Badges */
+.agri-badge-sucesso {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--sucesso-verde);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.agri-badge-alerta {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--alerta-amarelo);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.agri-badge-erro {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--erro-vermelho);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.agri-badge-info {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--info-azul);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* NEW: Badge Terra */
+.agri-badge-terra {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--terra-marrom);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* ➗ TECH-DIVIDER - Separador de Seções */
+.tech-divider {
+	height: 1px;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		var(--cinza-medio) 20%,
+		var(--cinza-medio) 80%,
+		transparent
+	);
+	margin: var(--space-8) 0;
+	position: relative;
+}
+
+.tech-divider::after {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 4px;
+	height: 4px;
+	background: var(--tech-roxo);
+	border-radius: 50%;
+}
+
+/* NEW: Divider Temático */
+.campo-divider {
+	height: 2px;
+	background: var(--gradient-campo);
+	margin: var(--space-8) 0;
+	border-radius: var(--radius-sm);
+}
+
+/* 📝 SISTEMA DE TIPOGRAFIA */
+.hero-title {
+	font-size: var(--text-2xl);
+	font-weight: var(--font-bold);
+	line-height: var(--leading-tight);
+	color: var(--campo-verde-dark);
+	margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+	.hero-title {
+		font-size: 2.5rem;
+	}
+}
+
+.section-title {
+	font-size: var(--text-xl);
+	font-weight: var(--font-semibold);
+	line-height: var(--leading-tight);
+	color: var(--campo-verde);
+	margin-bottom: var(--space-3);
+}
+
+.body-text {
+	font-size: var(--text-base);
+	line-height: var(--leading-relaxed);
+	color: var(--cinza-escuro);
+	margin-bottom: var(--space-4);
+}
+
+.caption {
+	font-size: var(--text-sm);
+	color: var(--tech-cinza);
+	line-height: var(--leading-normal);
+}
+
+/* NEW: Tipografia Expandida */
+.mega-title {
+	font-size: var(--text-3xl);
+	font-weight: var(--font-black);
+	line-height: var(--leading-tight);
+	color: var(--campo-verde-dark);
+	margin-bottom: var(--space-6);
+}
+
+@media (min-width: 768px) {
+	.mega-title {
+		font-size: 3rem;
+	}
+}
+
+.subtitle {
+	font-size: var(--text-lg);
+	font-weight: var(--font-medium);
+	color: var(--tech-cinza);
+	margin-bottom: var(--space-4);
+}
+
+.text-delicate {
+	font-weight: var(--font-light);
+	color: var(--tech-cinza);
+}
+
+/* NEW: COMPONENTES ESPECIALIZADOS */
+
+/* 🌱 Card de Agricultura */
+.agri-farm-card {
+	background: var(--campo-verde-soft);
+	border: 2px solid var(--campo-verde-light);
+	border-radius: var(--radius-xl);
+	padding: var(--space-6);
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-normal);
+}
+
+.agri-farm-card::before {
+	content: "🌱";
+	position: absolute;
+	top: var(--space-4);
+	right: var(--space-4);
+	font-size: var(--text-xl);
+	opacity: 0.3;
+}
+
+.agri-farm-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-xl);
+	border-color: var(--campo-verde);
+}
+
+/* 🏙️ Card de Cidade */
+.agri-city-card {
+	background: var(--cidade-azul-soft);
+	border: 2px solid var(--cidade-azul-light);
+	border-radius: var(--radius-xl);
+	padding: var(--space-6);
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-normal);
+}
+
+.agri-city-card::before {
+	content: "🏙️";
+	position: absolute;
+	top: var(--space-4);
+	right: var(--space-4);
+	font-size: var(--text-xl);
+	opacity: 0.3;
+}
+
+.agri-city-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-xl);
+	border-color: var(--cidade-azul);
+}
+
+/* 🌾 Card de Colheita */
+.agri-harvest-card {
+	background: var(--harvest-dourado-soft);
+	border: 2px solid var(--harvest-dourado-light);
+	border-radius: var(--radius-xl);
+	padding: var(--space-6);
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-normal);
+}
+
+.agri-harvest-card::before {
+	content: "🌾";
+	position: absolute;
+	top: var(--space-4);
+	right: var(--space-4);
+	font-size: var(--text-xl);
+	opacity: 0.3;
+}
+
+.agri-harvest-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-xl);
+	border-color: var(--harvest-dourado);
+}
+
+/* NEW: Alert Box de Status */
+.agri-alert {
+	padding: var(--space-4);
+	border-radius: var(--radius-md);
+	margin-bottom: var(--space-4);
+	border-left: 4px solid;
+	font-weight: var(--font-medium);
+}
+
+.agri-alert-sucesso {
+	background: var(--campo-verde-soft);
+	border-color: var(--sucesso-verde);
+	color: var(--campo-verde-dark);
+}
+
+.agri-alert-alerta {
+	background: var(--harvest-dourado-soft);
+	border-color: var(--alerta-amarelo);
+	color: var(--harvest-dourado-dark);
+}
+
+.agri-alert-erro {
+	background: #fef2f2;
+	border-color: var(--erro-vermelho);
+	color: #991b1b;
+}
+
+.agri-alert-info {
+	background: var(--cidade-azul-soft);
+	border-color: var(--info-azul);
+	color: var(--cidade-azul-dark);
+}

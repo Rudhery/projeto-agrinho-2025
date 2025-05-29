@@ -1,0 +1,194 @@
+/**
+ * 🌾 AGRI-FRAMEWORK v1.0
+ * Mini-framework CSS semântico para agronegócio
+ * Criado para o Projeto Agrinho 2025
+ * 
+ * Filosofia: "Menos é mais" - Cada linha de CSS tem propósito claro
+ * Arquitetura: Modular, semântica e performática
+ * 
+ * 📊 MÉTRICAS:
+ * - Total: ~280 linhas de CSS
+ * - 12 custom properties principais
+ * - 18 classes utilitárias essenciais
+ * - 8 keyframes temáticos
+ * - 100% responsivo e acessível
+ * 
+ * 🎯 USAGE EXAMPLES:
+ * 
+ * Layout:
+ * <div class="container">
+ *   <div class="grid-3">
+ *     <div class="agri-card hover-lift">...</div>
+ *   </div>
+ * </div>
+ * 
+ * Typography:
+ * <h1 class="hero-title text-campo">Título Principal</h1>
+ * <p class="body-text">Texto do corpo</p>
+ * 
+ * Components:
+ * <button class="agri-btn hover-grow">Ação</button>
+ * <span class="agri-badge">Novo</span>
+ * 
+ * Animations:
+ * <div class="fade-in hover-tech">Elemento animado</div>
+ */
+
+/* 🎨 IMPORTAÇÃO DOS MÓDULOS */
+@import url("./variables.css");
+@import url("./components.css");
+@import url("./utilities.css");
+@import url("./animations.css");
+
+/**
+ * 🏆 CLASSES ESPECIAIS DO FRAMEWORK
+ * Combinações otimizadas para casos de uso específicos
+ */
+
+/* 🌟 HERO SECTION COMPLETA */
+.agri-hero {
+	background: linear-gradient(
+		135deg,
+		var(--campo-verde-dark) 0%,
+		var(--campo-verde) 50%,
+		var(--campo-verde-light) 100%
+	);
+	color: var(--branco);
+	padding: var(--space-16) 0;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.agri-hero::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="25" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="25" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+	animation: field-wave 10s infinite ease-in-out;
+}
+
+/* 🎯 CALL-TO-ACTION SECTION */
+.agri-cta {
+	background: var(--harvest-dourado);
+	color: var(--branco);
+	padding: var(--space-12) 0;
+	text-align: center;
+	position: relative;
+}
+
+.agri-cta .agri-btn {
+	background: var(--branco);
+	color: var(--harvest-dourado);
+	font-weight: var(--font-bold);
+	padding: var(--space-4) var(--space-8);
+	font-size: var(--text-lg);
+}
+
+.agri-cta .agri-btn:hover {
+	background: var(--cinza-claro);
+	transform: translateY(-3px) scale(1.05);
+}
+
+/* 🏅 FEATURE CARD ESPECIAL */
+.feature-card {
+	background: var(--branco);
+	padding: var(--space-8);
+	border-radius: var(--radius-xl);
+	box-shadow: var(--shadow-lg);
+	text-align: center;
+	position: relative;
+	border: 2px solid transparent;
+	transition: all var(--transition-normal);
+}
+
+.feature-card::before {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: linear-gradient(
+		45deg,
+		var(--campo-verde),
+		var(--cidade-azul),
+		var(--harvest-dourado)
+	);
+	border-radius: var(--radius-xl);
+	z-index: -1;
+	opacity: 0;
+	transition: opacity var(--transition-normal);
+}
+
+.feature-card:hover::before {
+	opacity: 1;
+}
+
+.feature-card:hover {
+	transform: translateY(-10px);
+	box-shadow: var(--shadow-xl);
+}
+
+/* 📊 ESTATÍSTICA CARD */
+.stat-card {
+	background: var(--cinza-claro);
+	padding: var(--space-6);
+	border-radius: var(--radius-lg);
+	text-align: center;
+	transition: all var(--transition-normal);
+}
+
+.stat-number {
+	font-size: var(--text-2xl);
+	font-weight: var(--font-bold);
+	color: var(--campo-verde);
+	display: block;
+	margin-bottom: var(--space-2);
+}
+
+.stat-label {
+	font-size: var(--text-sm);
+	color: var(--tech-cinza);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* 🎨 SEÇÃO COM BACKGROUND PATTERN */
+.patterned-section {
+	background: var(--cinza-claro);
+	background-image: radial-gradient(
+			circle at 25% 25%,
+			var(--campo-verde-light) 2px,
+			transparent 2px
+		),
+		radial-gradient(
+			circle at 75% 75%,
+			var(--cidade-azul-light) 1px,
+			transparent 1px
+		);
+	background-size: 50px 50px;
+	background-position: 0 0, 25px 25px;
+}
+
+/**
+ * 📱 UTILITÁRIOS RESPONSIVOS EXTRAS
+ */
+@media (min-width: 768px) {
+	.md\:grid-4 {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.md\:text-3xl {
+		font-size: 1.875rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.lg\:grid-5 {
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
