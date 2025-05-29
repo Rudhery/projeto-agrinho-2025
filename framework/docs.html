@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>AGRI-FRAMEWORK - Documentação Completa</title>
+		<link
+			rel="stylesheet"
+			href="styles/agri-framework.css"
+		/>
+		<style>
+			/* Estilos específicos para documentação */
+			.docs-nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 250px;
+				height: 100vh;
+				background: var(--campo-verde);
+				color: white;
+				padding: 2rem 1rem;
+				overflow-y: auto;
+				z-index: 100;
+			}
+
+			.docs-content {
+				margin-left: 250px;
+				padding: 2rem;
+				max-width: 1200px;
+			}
+
+			.docs-nav h3 {
+				color: var(--harvest-dourado);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+				padding-bottom: 0.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.docs-nav a {
+				display: block;
+				color: white;
+				text-decoration: none;
+				padding: 0.5rem 0;
+				border-left: 3px solid transparent;
+				padding-left: 1rem;
+				transition: all 0.2s ease;
+			}
+
+			.docs-nav a:hover {
+				border-left-color: var(--harvest-dourado);
+				background: rgba(255, 255, 255, 0.1);
+			}
+
+			.docs-section {
+				margin-bottom: 4rem;
+				padding: 2rem;
+				background: white;
+				border-radius: 15px;
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			}
+
+			.code-demo {
+				background: #f8f9fa;
+				border: 1px solid #e9ecef;
+				border-radius: 8px;
+				padding: 1.5rem;
+				margin: 1rem 0;
+				position: relative;
+			}
+
+			.code-demo pre {
+				margin: 0;
+				overflow-x: auto;
+				background: #2d3748;
+				color: #e2e8f0;
+				padding: 1rem;
+				border-radius: 5px;
+				margin-top: 1rem;
+			}
+
+			.demo-preview {
+				border: 1px solid #e9ecef;
+				border-radius: 8px;
+				padding: 2rem;
+				margin: 1rem 0;
+				background: white;
+			}
+
+			.color-palette {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1rem;
+				margin: 1rem 0;
+			}
+
+			.color-item {
+				text-align: center;
+				padding: 1rem;
+				border-radius: 8px;
+				color: white;
+				font-weight: bold;
+			}
+
+			.component-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1rem;
+				margin: 1rem 0;
+			}
+
+			.badge-demo {
+				display: inline-block;
+				margin: 0.25rem;
+			}
+
+			.parallax-mini {
+				height: 200px;
+				overflow: hidden;
+				position: relative;
+				border-radius: 10px;
+				perspective: 1px;
+			}
+
+			.parallax-mini .layer {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+			.parallax-mini .back {
+				transform: translateZ(-0.5px) scale(1.5);
+				background: linear-gradient(
+					135deg,
+					var(--campo-verde),
+					var(--cidade-azul)
+				);
+			}
+
+			.parallax-mini .front {
+				transform: translateZ(0);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-weight: bold;
+			}
+
+			@media (max-width: 768px) {
+				.docs-nav {
+					transform: translateX(-100%);
+					transition: transform 0.3s ease;
+				}
+
+				.docs-nav.open {
+					transform: translateX(0);
+				}
+
+				.docs-content {
+					margin-left: 0;
+				}
+
+				.mobile-menu {
+					position: fixed;
+					top: 1rem;
+					left: 1rem;
+					z-index: 101;
+					background: var(--campo-verde);
+					color: white;
+					border: none;
+					padding: 0.5rem;
+					border-radius: 5px;
+				}
+			}
+
+			.table-responsive {
+				overflow-x: auto;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 1rem 0;
+			}
+
+			th,
+			td {
+				border: 1px solid #ddd;
+				padding: 0.75rem;
+				text-align: left;
+			}
+
+			th {
+				background: var(--campo-verde);
+				color: white;
+			}
+
+			.icon-demo {
+				font-size: 2rem;
+				margin: 0.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Menu móvel -->
+		<button
+			class="mobile-menu"
+			onclick="toggleNav()"
+		>
+			☰
+		</button>
+
+		<!-- Navegação lateral -->
+		<nav
+			class="docs-nav"
+			id="docsNav"
+		>
+			<h2>🌱 AGRI-FRAMEWORK</h2>
+
+			<h3>📚 Documentação</h3>
+			<a href="#overview">Visão Geral</a>
+			<a href="#installation">Instalação</a>
+			<a href="#colors">Sistema de Cores</a>
+			<a href="#typography">Tipografia</a>
+
+			<h3>🧩 Componentes</h3>
+			<a href="#buttons">Botões</a>
+			<a href="#cards">Cards</a>
+			<a href="#badges">Badges/Etiquetas</a>
+			<a href="#forms">Formulários</a>
+
+			<h3>🎨 Layout</h3>
+			<a href="#grid">Sistema Grid</a>
+			<a href="#utilities">Utilitários</a>
+			<a href="#spacing">Espaçamento</a>
+
+			<h3>✨ Animações</h3>
+			<a href="#animations">Animações CSS</a>
+			<a href="#parallax">Paralaxe CSS</a>
+			<a href="#hover-effects">Efeitos Hover</a>
+
+			<h3>🎯 Exemplos</h3>
+			<a href="#examples">Página Completa</a>
+			<a href="#best-practices">Melhores Práticas</a>
+		</nav>
+
+		<!-- Conteúdo principal -->
+		<main class="docs-content">
+			<!-- Visão Geral -->
+			<section
+				id="overview"
+				class="docs-section"
+			>
+				<h1>🌱 AGRI-FRAMEWORK</h1>
+				<p class="subtitle">
+					Framework CSS especializado para o agronegócio - Concurso Agrinho 2025
+				</p>
+
+				<div class="demo-preview">
+					<h3>🎯 Características Principais</h3>
+					<ul>
+						<li>✅ <strong>100% CSS puro</strong> - Sem JavaScript</li>
+						<li>
+							✅ <strong>Tema agronegócio</strong> - Cores e componentes
+							especializados
+						</li>
+						<li>✅ <strong>Responsivo</strong> - Mobile-first design</li>
+						<li>✅ <strong>Animações avançadas</strong> - Paralaxe CSS puro</li>
+						<li>✅ <strong>Performance</strong> - Otimizado para 60fps</li>
+						<li>
+							✅ <strong>Naming único</strong> - Classes autorais diferenciadas
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Instalação -->
+			<section
+				id="installation"
+				class="docs-section"
+			>
+				<h2>📦 Instalação</h2>
+
+				<div class="code-demo">
+					<h4>Estrutura de Arquivos:</h4>
+					<pre><code>framework/
+├── styles/
+│   ├── variables.css    (Custom Properties)
+│   ├── components.css   (Botões, Cards, etc)
+│   ├── utilities.css    (Classes utilitárias)
+│   ├── animations.css   (Animações e Paralaxe)
+│   └── agri-framework.css (Arquivo principal)
+├── demo-css-puro.html
+└── docs.html</code></pre>
+				</div>
+
+				<div class="code-demo">
+					<h4>Como usar:</h4>
+					<pre><code>&lt;link rel="stylesheet" href="styles/agri-framework.css"&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- Sistema de Cores -->
+			<section
+				id="colors"
+				class="docs-section"
+			>
+				<h2>🎨 Sistema de Cores</h2>
+
+				<div class="color-palette">
+					<div
+						class="color-item"
+						style="background: var(--campo-verde)"
+					>
+						--campo-verde<br />#2E7D32
+					</div>
+					<div
+						class="color-item"
+						style="background: var(--cidade-azul)"
+					>
+						--cidade-azul<br />#1976D2
+					</div>
+					<div
+						class="color-item"
+						style="background: var(--harvest-dourado)"
+					>
+						--harvest-dourado<br />#FFA726
+					</div>
+					<div
+						class="color-item"
+						style="background: var(--terra-marrom)"
+					>
+						--terra-marrom<br />#8D6E63
+					</div>
+					<div
+						class="color-item"
+						style="background: var(--tech-roxo)"
+					>
+						--tech-roxo<br />#7B1FA2
+					</div>
+					<div
+						class="color-item"
+						style="background: var(--ceu-azul)"
+					>
+						--ceu-azul<br />#03A9F4
+					</div>
+				</div>
+
+				<div class="code-demo">
+					<h4>Uso das cores:</h4>
+					<pre><code>.minha-classe {
+    background: var(--campo-verde);
+    color: var(--branco);
+    border: 1px solid var(--harvest-dourado);
+}</code></pre>
+				</div>
+			</section>
+
+			<!-- Tipografia -->
+			<section
+				id="typography"
+				class="docs-section"
+			>
+				<h2>📝 Tipografia</h2>
+
+				<div class="demo-preview">
+					<h1 class="hero-title">Hero Title (.hero-title)</h1>
+					<h2 class="section-title">Section Title (.section-title)</h2>
+					<h3>Subtitle (.subtitle)</h3>
+					<p>Parágrafo normal com texto explicativo sobre o agronegócio.</p>
+					<small>Texto pequeno (.text-small)</small>
+				</div>
+
+				<div class="code-demo">
+					<h4>Classes de tipografia:</h4>
+					<pre><code>&lt;h1 class="hero-title"&gt;Título Principal&lt;/h1&gt;
+&lt;h2 class="section-title"&gt;Título de Seção&lt;/h2&gt;
+&lt;p class="subtitle"&gt;Subtítulo&lt;/p&gt;
+&lt;p class="text-small"&gt;Texto pequeno&lt;/p&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- Botões -->
+			<section
+				id="buttons"
+				class="docs-section"
+			>
+				<h2>🔘 Botões</h2>
+
+				<div class="demo-preview">
+					<button class="agri-btn">Botão Principal</button>
+					<button class="agri-btn-campo">Botão Campo</button>
+					<button class="agri-btn-cidade">Botão Cidade</button>
+					<button class="agri-btn-harvest">Botão Harvest</button>
+					<br /><br />
+					<button class="agri-btn hover-3d">Com Hover 3D</button>
+					<button class="agri-btn hover-magnetic">Hover Magnético</button>
+				</div>
+
+				<div class="code-demo">
+					<h4>Tipos de botões:</h4>
+					<pre><code>&lt;button class="agri-btn"&gt;Botão Principal&lt;/button&gt;
+&lt;button class="agri-btn-campo"&gt;Botão Campo&lt;/button&gt;
+&lt;button class="agri-btn-cidade"&gt;Botão Cidade&lt;/button&gt;
+&lt;button class="agri-btn-harvest"&gt;Botão Harvest&lt;/button&gt;
+
+&lt;!-- Com efeitos hover --&gt;
+&lt;button class="agri-btn hover-3d"&gt;Com Hover 3D&lt;/button&gt;
+&lt;button class="agri-btn hover-magnetic"&gt;Hover Magnético&lt;/button&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- Cards -->
+			<section
+				id="cards"
+				class="docs-section"
+			>
+				<h2>🃏 Cards</h2>
+
+				<div class="component-grid">
+					<div class="agri-card">
+						<h3>Card Básico</h3>
+						<p>Card padrão do framework com estilo agronegócio.</p>
+						<span class="etiqueta-harvest">Padrão</span>
+					</div>
+
+					<div class="agri-farm-card">
+						<h3>Farm Card</h3>
+						<p>Especializado para conteúdo rural.</p>
+						<span class="etiqueta-crescimento">Campo</span>
+					</div>
+
+					<div class="agri-city-card">
+						<h3>City Card</h3>
+						<p>Voltado para conteúdo urbano.</p>
+						<span class="etiqueta-irrigacao">Cidade</span>
+					</div>
+				</div>
+
+				<div class="code-demo">
+					<h4>Tipos de cards:</h4>
+					<pre><code>&lt;div class="agri-card"&gt;
+    &lt;h3&gt;Card Básico&lt;/h3&gt;
+    &lt;p&gt;Conteúdo do card&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="agri-farm-card"&gt;
+    &lt;h3&gt;Farm Card&lt;/h3&gt;
+    &lt;p&gt;Para conteúdo rural&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="agri-city-card"&gt;
+    &lt;h3&gt;City Card&lt;/h3&gt;
+    &lt;p&gt;Para conteúdo urbano&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- Badges/Etiquetas -->
+			<section
+				id="badges"
+				class="docs-section"
+			>
+				<h2>🏷️ Badges/Etiquetas</h2>
+
+				<div class="demo-preview">
+					<div class="badge-demo">
+						<span class="etiqueta-harvest">Harvest</span>
+						<span class="etiqueta-crescimento">Crescimento</span>
+						<span class="etiqueta-atencao">Atenção</span>
+						<span class="etiqueta-praga">Praga</span>
+						<span class="etiqueta-irrigacao">Irrigação</span>
+						<span class="etiqueta-solo">Solo</span>
+					</div>
+				</div>
+
+				<div class="code-demo">
+					<h4>Sistema de etiquetas único:</h4>
+					<pre><code>&lt;span class="etiqueta-harvest"&gt;Harvest&lt;/span&gt;
+&lt;span class="etiqueta-crescimento"&gt;Crescimento&lt;/span&gt;
+&lt;span class="etiqueta-atencao"&gt;Atenção&lt;/span&gt;
+&lt;span class="etiqueta-praga"&gt;Praga&lt;/span&gt;
+&lt;span class="etiqueta-irrigacao"&gt;Irrigação&lt;/span&gt;
+&lt;span class="etiqueta-solo"&gt;Solo&lt;/span&gt;</code></pre>
+				</div>
+
+				<div class="table-responsive">
+					<table>
+						<thead>
+							<tr>
+								<th>Classe</th>
+								<th>Uso</th>
+								<th>Cor</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>.etiqueta-harvest</td>
+								<td>Colheita, principal</td>
+								<td>Dourado</td>
+							</tr>
+							<tr>
+								<td>.etiqueta-crescimento</td>
+								<td>Sucesso, crescimento</td>
+								<td>Verde</td>
+							</tr>
+							<tr>
+								<td>.etiqueta-atencao</td>
+								<td>Avisos, atenção</td>
+								<td>Amarelo</td>
+							</tr>
+							<tr>
+								<td>.etiqueta-praga</td>
+								<td>Erros, pragas</td>
+								<td>Vermelho</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<!-- Animações -->
+			<section
+				id="animations"
+				class="docs-section"
+			>
+				<h2>✨ Animações CSS</h2>
+
+				<div class="component-grid">
+					<div class="agri-card anim-morph">
+						<h3>Morphing</h3>
+						<p>Transformação contínua</p>
+					</div>
+
+					<div class="agri-card anim-breathe">
+						<h3>Breathing</h3>
+						<p>Respiração suave</p>
+					</div>
+
+					<div class="agri-card anim-float">
+						<h3>Float</h3>
+						<p>Flutuação complexa</p>
+					</div>
+
+					<div class="agri-card combo-morph-float">
+						<h3>Combo</h3>
+						<p>Múltiplas animações</p>
+					</div>
+				</div>
+
+				<div class="code-demo">
+					<h4>Classes de animação:</h4>
+					<pre><code>&lt;div class="agri-card anim-morph"&gt;Morphing&lt;/div&gt;
+&lt;div class="agri-card anim-breathe"&gt;Breathing&lt;/div&gt;
+&lt;div class="agri-card anim-float"&gt;Float&lt;/div&gt;
+&lt;div class="agri-card combo-morph-float"&gt;Combo&lt;/div&gt;
+
+&lt;!-- Animações de entrada --&gt;
+&lt;div class="anim-slide-up delay-2"&gt;Slide Up&lt;/div&gt;
+&lt;div class="anim-scale delay-3"&gt;Scale In&lt;/div&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- Paralaxe CSS -->
+			<section
+				id="parallax"
+				class="docs-section"
+			>
+				<h2>🌊 Paralaxe CSS Puro</h2>
+
+				<div class="demo-preview">
+					<div class="parallax-mini">
+						<div class="layer back"></div>
+						<div class="layer front">Paralaxe Demo</div>
+					</div>
+				</div>
+
+				<div class="code-demo">
+					<h4>1. Transform 3D Parallax:</h4>
+					<pre><code>&lt;div class="parallax-scene"&gt;
+    &lt;div class="parallax-layer parallax-layer-back"&gt;Fundo&lt;/div&gt;
+    &lt;div class="parallax-layer parallax-layer-mid"&gt;Meio&lt;/div&gt;
+    &lt;div class="parallax-layer parallax-layer-front"&gt;Frente&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+
+				<div class="code-demo">
+					<h4>2. Background Attachment:</h4>
+					<pre><code>&lt;section class="bg-parallax" style="background-image: url('bg.jpg')"&gt;
+    &lt;div class="content"&gt;Conteúdo&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+				</div>
+
+				<div class="code-demo">
+					<h4>3. Efeitos de Profundidade:</h4>
+					<pre><code>&lt;div class="depth-layers"&gt;
+    &lt;div class="floating-card depth-layer-2"&gt;Camada 2&lt;/div&gt;
+    &lt;div class="floating-card depth-layer-3"&gt;Camada 3&lt;/div&gt;
+    &lt;div class="floating-card depth-layer-4"&gt;Camada 4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- Utilitários -->
+			<section
+				id="utilities"
+				class="docs-section"
+			>
+				<h2>🛠️ Classes Utilitárias</h2>
+
+				<div class="table-responsive">
+					<table>
+						<thead>
+							<tr>
+								<th>Categoria</th>
+								<th>Classes</th>
+								<th>Exemplo</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Texto</td>
+								<td>.text-center, .text-left, .text-right</td>
+								<td>Alinhamento de texto</td>
+							</tr>
+							<tr>
+								<td>Display</td>
+								<td>.d-flex, .d-grid, .d-block, .d-none</td>
+								<td>Controle de display</td>
+							</tr>
+							<tr>
+								<td>Hover</td>
+								<td>.hover-lift, .hover-scale, .hover-3d</td>
+								<td>Efeitos de hover</td>
+							</tr>
+							<tr>
+								<td>Animação</td>
+								<td>.delay-1, .delay-2, .duration-slow</td>
+								<td>Controle de timing</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<!-- Exemplo Completo -->
+			<section
+				id="examples"
+				class="docs-section"
+			>
+				<h2>🎯 Exemplo de Página Completa</h2>
+
+				<div class="code-demo">
+					<h4>Template para Agrinho 2025:</h4>
+					<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;AgriConnect - Conectando Campo e Cidade&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles/agri-framework.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Hero com paralaxe --&gt;
+    &lt;div class="parallax-scene"&gt;
+        &lt;div class="parallax-layer parallax-layer-back bg-gradient-move"&gt;&lt;/div&gt;
+        &lt;div class="parallax-layer parallax-layer-front"&gt;
+            &lt;div class="hero-content"&gt;
+                &lt;h1 class="hero-title anim-text-glow"&gt;AgriConnect&lt;/h1&gt;
+                &lt;p class="subtitle"&gt;Festejando a Conexão Campo Cidade&lt;/p&gt;
+                &lt;button class="agri-btn hover-3d"&gt;Explorar Conexões&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Conteúdo principal --&gt;
+    &lt;main class="container"&gt;
+        &lt;section class="depth-layers"&gt;
+            &lt;div class="floating-card depth-layer-2"&gt;
+                &lt;h2&gt;🌱 Do Campo&lt;/h2&gt;
+                &lt;p&gt;Agricultura sustentável e tecnologia verde&lt;/p&gt;
+                &lt;span class="etiqueta-crescimento"&gt;Sustentável&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="floating-card depth-layer-3"&gt;
+                &lt;h2&gt;🏙️ Para a Cidade&lt;/h2&gt;
+                &lt;p&gt;Alimentos frescos e consumo consciente&lt;/p&gt;
+                &lt;span class="etiqueta-irrigacao"&gt;Fresco&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				</div>
+			</section>
+
+			<!-- Melhores Práticas -->
+			<section
+				id="best-practices"
+				class="docs-section"
+			>
+				<h2>🏆 Melhores Práticas</h2>
+
+				<div class="demo-preview">
+					<h3>✅ Performance</h3>
+					<ul>
+						<li>Use <code>transform</code> ao invés de mudanças de posição</li>
+						<li><code>will-change: transform</code> para elementos animados</li>
+						<li>Combine animações ao invés de múltiplas classes</li>
+						<li>Use <code>cubic-bezier</code> para transições naturais</li>
+					</ul>
+
+					<h3>✅ Acessibilidade</h3>
+					<ul>
+						<li>Contraste mínimo 4.5:1 (já implementado)</li>
+						<li>Use <code>:focus</code> states para navegação por teclado</li>
+						<li>Semântica HTML correta</li>
+						<li><code>aria-labels</code> quando necessário</li>
+					</ul>
+
+					<h3>✅ Para o Concurso</h3>
+					<ul>
+						<li>Foque no tema "conexão campo cidade"</li>
+						<li>Use as cores semânticas do framework</li>
+						<li>Combine paralaxe com animações sutis</li>
+						<li>Storytelling visual claro</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Footer da documentação -->
+			<footer
+				style="
+					text-align: center;
+					padding: 2rem;
+					background: var(--campo-verde);
+					color: white;
+					border-radius: 15px;
+					margin-top: 2rem;
+				"
+			>
+				<h3>🌱 AGRI-FRAMEWORK</h3>
+				<p>Framework CSS especializado para agronegócio</p>
+				<p>Desenvolvido para o <strong>Concurso Agrinho 2025</strong></p>
+				<p>
+					<strong>100% CSS</strong> • <strong>0% JavaScript</strong> •
+					<strong>Performance 60fps</strong>
+				</p>
+			</footer>
+		</main>
+
+		<script>
+			function toggleNav() {
+				const nav = document.getElementById("docsNav");
+				nav.classList.toggle("open");
+			}
+
+			// Smooth scroll para links internos
+			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+				anchor.addEventListener("click", function (e) {
+					e.preventDefault();
+					const target = document.querySelector(this.getAttribute("href"));
+					if (target) {
+						target.scrollIntoView({
+							behavior: "smooth",
+							block: "start",
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

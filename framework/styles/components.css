@@ -71,23 +71,25 @@ body {
 	}
 }
 
-/* 🃏 AGRI-CARD - Card Base Elegante */
+/* 🃏 AGRI-CARD - Card Principal */
 .agri-card {
 	background: var(--branco);
 	border-radius: var(--radius-lg);
 	padding: var(--space-6);
-	box-shadow: var(--shadow-md);
-	border: 1px solid var(--cinza-medio);
-	transition: all var(--transition-normal);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--cinza-claro);
+	/* 🎭 Transições suaves */
+	transition: all var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, box-shadow, border-color;
 }
 
 .agri-card:hover {
-	transform: translateY(-2px);
+	transform: translateY(-4px) scale(1.01);
 	box-shadow: var(--shadow-lg);
 	border-color: var(--campo-verde-light);
 }
 
-/* 🔘 AGRI-BTN - Botão Principal */
+/* 🔴 AGRI-BTN - Botão Principal */
 .agri-btn {
 	display: inline-flex;
 	align-items: center;
@@ -97,49 +99,155 @@ body {
 	color: var(--branco);
 	border: none;
 	border-radius: var(--radius-md);
-	font-weight: var(--font-semibold);
-	font-size: var(--text-base);
-	cursor: pointer;
-	transition: all var(--transition-fast);
+	font-weight: var(--font-medium);
 	text-decoration: none;
-	gap: var(--space-2);
+	cursor: pointer;
+	font-size: var(--text-sm);
+	line-height: 1;
+	/* 🎭 Transições refinadas */
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
+	position: relative;
+	overflow: hidden;
+}
+
+.agri-btn::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left var(--transition-normal);
 }
 
 .agri-btn:hover {
 	background: var(--campo-verde-dark);
-	transform: translateY(-1px);
-	box-shadow: var(--shadow-md);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: var(--shadow-lg);
+}
+
+.agri-btn:hover::before {
+	left: 100%;
 }
 
 .agri-btn:active {
-	transform: translateY(0);
+	transform: translateY(0) scale(0.98);
 }
 
-/* NEW: Variações de Botões Temáticos */
+/* 🔵 Botão Cidade */
 .agri-btn-cidade {
+	padding: var(--space-3) var(--space-6);
 	background: var(--cidade-azul);
+	color: var(--branco);
+	border: none;
+	border-radius: var(--radius-md);
+	font-weight: var(--font-medium);
+	text-decoration: none;
+	cursor: pointer;
+	font-size: var(--text-sm);
+	line-height: 1;
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
+}
+
+.agri-btn-cidade::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left var(--transition-normal);
 }
 
 .agri-btn-cidade:hover {
 	background: var(--cidade-azul-dark);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: var(--shadow-md);
 }
 
+.agri-btn-cidade:hover::before {
+	left: 100%;
+}
+
+.agri-btn-cidade:active {
+	transform: translateY(0) scale(0.98);
+}
+
+/* 🟡 Botão Harvest */
 .agri-btn-harvest {
+	padding: var(--space-3) var(--space-6);
 	background: var(--harvest-dourado);
-	color: var(--preto-suave);
+	color: var(--branco);
+	border: none;
+	border-radius: var(--radius-md);
+	font-weight: var(--font-medium);
+	text-decoration: none;
+	cursor: pointer;
+	font-size: var(--text-sm);
+	line-height: 1;
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
+}
+
+.agri-btn-harvest::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left var(--transition-normal);
 }
 
 .agri-btn-harvest:hover {
 	background: var(--harvest-dourado-dark);
-	color: var(--branco);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
 }
 
+.agri-btn-harvest:hover::before {
+	left: 100%;
+}
+
+.agri-btn-harvest:active {
+	transform: translateY(0) scale(0.98);
+}
+
+/* 🟤 Botão Terra */
 .agri-btn-terra {
 	background: var(--terra-marrom);
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
 }
 
 .agri-btn-terra:hover {
-	background: var(--terra-marrom-light);
+	background: var(--terra-marrom-dark);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: var(--shadow-md);
 }
 
 /* NEW: Botão Outline */
@@ -166,6 +274,11 @@ body {
 	border-radius: var(--radius-xl);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
+}
+
+.etiqueta-harvest:hover {
+	transform: translateY(-1px);
 }
 
 /* 🎨 CLASSE BASE para etiquetas customizadas */
@@ -192,6 +305,7 @@ body {
 	border-radius: var(--radius-xl);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
 }
 
 .etiqueta-atencao {
@@ -205,6 +319,7 @@ body {
 	border-radius: var(--radius-xl);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
 }
 
 .etiqueta-praga {
@@ -218,6 +333,7 @@ body {
 	border-radius: var(--radius-xl);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
 }
 
 .etiqueta-irrigacao {
@@ -231,6 +347,7 @@ body {
 	border-radius: var(--radius-xl);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
 }
 
 .etiqueta-solo {
@@ -244,6 +361,7 @@ body {
 	border-radius: var(--radius-xl);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
 }
 
 /* 🏷️ AGRI-BADGE - Etiquetas Elegantes */
@@ -547,4 +665,52 @@ body {
 	background: var(--cidade-azul-soft);
 	border-color: var(--info-azul);
 	color: var(--cidade-azul-dark);
+}
+
+/* 🌱 Botão Campo */
+.agri-btn-campo {
+	padding: var(--space-3) var(--space-6);
+	background: var(--campo-verde);
+	color: var(--branco);
+	border: none;
+	border-radius: var(--radius-md);
+	font-weight: var(--font-medium);
+	text-decoration: none;
+	cursor: pointer;
+	font-size: var(--text-sm);
+	line-height: 1;
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
+}
+
+.agri-btn-campo::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left var(--transition-normal);
+}
+
+.agri-btn-campo:hover {
+	background: var(--campo-verde-dark);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: var(--shadow-lg);
+}
+
+.agri-btn-campo:hover::before {
+	left: 100%;
+}
+
+.agri-btn-campo:active {
+	transform: translateY(0) scale(0.98);
 }
