@@ -79,7 +79,7 @@ body {
 	box-shadow: var(--shadow-sm);
 	border: 1px solid var(--cinza-claro);
 	/* 🎭 Transições suaves */
-	transition: all var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+	transition: all var(--transition-normal);
 	will-change: transform, box-shadow, border-color;
 }
 

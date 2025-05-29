@@ -90,6 +90,14 @@
 	color: var(--preto-suave);
 }
 
+/* FIXED: Cores básicas com especificidade correta */
+.text-white {
+	color: var(--branco, #ffffff) !important;
+}
+.text-black {
+	color: var(--preto-suave, #0f172a) !important;
+}
+
 /* NEW: Cores Complementares */
 .text-terra {
 	color: var(--terra-marrom);
