@@ -1,194 +1,2601 @@
 /**
- * 🌾 AGRI-FRAMEWORK v1.0
+ * 🌾 AGRI-FRAMEWORK - Variables
  * Mini-framework CSS semântico para agronegócio
- * Criado para o Projeto Agrinho 2025
- * 
- * Filosofia: "Menos é mais" - Cada linha de CSS tem propósito claro
- * Arquitetura: Modular, semântica e performática
- * 
- * 📊 MÉTRICAS:
- * - Total: ~280 linhas de CSS
- * - 12 custom properties principais
- * - 18 classes utilitárias essenciais
- * - 8 keyframes temáticos
- * - 100% responsivo e acessível
- * 
- * 🎯 USAGE EXAMPLES:
- * 
- * Layout:
- * <div class="container">
- *   <div class="grid-3">
- *     <div class="agri-card hover-lift">...</div>
- *   </div>
- * </div>
- * 
- * Typography:
- * <h1 class="hero-title text-campo">Título Principal</h1>
- * <p class="body-text">Texto do corpo</p>
- * 
- * Components:
- * <button class="agri-btn hover-grow">Ação</button>
- * <span class="agri-badge">Novo</span>
- * 
- * Animations:
- * <div class="fade-in hover-tech">Elemento animado</div>
+ * Sistema de design tokens otimizado para performance
  */
 
-/* 🎨 IMPORTAÇÃO DOS MÓDULOS */
-@import url("./variables.css");
-@import url("./components.css");
-@import url("./utilities.css");
-@import url("./animations.css");
+:root {
+	/* 🌈 CORES SEMÂNTICAS DO AGRONEGÓCIO */
+	--campo-verde: #2d5a3d;
+	--campo-verde-light: #4a7c59;
+	--campo-verde-dark: #1e3d2a;
+	--campo-verde-soft: #e8f5e8; /* NEW: Para backgrounds sutis */
 
-/**
- * 🏆 CLASSES ESPECIAIS DO FRAMEWORK
- * Combinações otimizadas para casos de uso específicos
- */
+	--cidade-azul: #2563eb;
+	--cidade-azul-light: #60a5fa;
+	--cidade-azul-dark: #1d4ed8;
+	--cidade-azul-soft: #eff6ff; /* NEW: Para seções tecnológicas */
 
-/* 🌟 HERO SECTION COMPLETA */
-.agri-hero {
-	background: linear-gradient(
+	--harvest-dourado: #f59e0b;
+	--harvest-dourado-light: #fbbf24;
+	--harvest-dourado-dark: #d97706;
+	--harvest-dourado-soft: #fef3c7; /* NEW: Para destaques suaves */
+
+	--tech-roxo: #7c3aed;
+	--tech-roxo-light: #a78bfa;
+	--tech-roxo-dark: #5b21b6;
+	--tech-cinza: #6b7280;
+
+	/* 🌱 CORES COMPLEMENTARES TEMÁTICAS */
+	--terra-marrom: #c2845c; /* FIXED: Cor mais vibrante para terra/solo */
+	--terra-marrom-light: #d49b73;
+	--terra-marrom-dark: #a0633d; /* NEW: Versão escura */
+	--terra-marrom-soft: #f4ede4;
+
+	--ceu-azul: #0ea5e9; /* NEW: Azul céu/irrigação */
+	--ceu-azul-light: #38bdf8;
+	--ceu-azul-soft: #e0f2fe;
+
+	--sol-amarelo: #eab308; /* NEW: Energia solar/sustentável */
+	--sol-amarelo-light: #facc15;
+	--sol-amarelo-soft: #fefce8;
+
+	/* 🎨 NEUTROS ELEGANTES */
+	--branco: #ffffff;
+	--cinza-claro: #f8fafc;
+	--cinza-medio: #e2e8f0;
+	--cinza-escuro: #334155;
+	--preto-suave: #0f172a;
+
+	/* 📊 CORES DE STATUS/FEEDBACK */
+	--sucesso-verde: #10b981; /* NEW: Para mensagens de sucesso */
+	--alerta-amarelo: #f59e0b; /* Reaproveitando harvest */
+	--erro-vermelho: #ef4444; /* NEW: Para erros/alertas */
+	--info-azul: #3b82f6; /* NEW: Para informações */
+
+	/* 📏 SISTEMA DE ESPAÇAMENTO (base 8px) */
+	--space-1: 0.25rem; /* 4px */
+	--space-2: 0.5rem; /* 8px */
+	--space-3: 0.75rem; /* 12px */
+	--space-4: 1rem; /* 16px */
+	--space-6: 1.5rem; /* 24px */
+	--space-8: 2rem; /* 32px */
+	--space-12: 3rem; /* 48px */
+	--space-16: 4rem; /* 64px */
+	--space-20: 5rem; /* 80px - NEW: Para seções grandes */
+
+	/* ✨ TIPOGRAFIA HARMÔNICA */
+	--text-xs: 0.75rem; /* 12px */
+	--text-sm: 0.875rem; /* 14px */
+	--text-base: 1rem; /* 16px */
+	--text-lg: 1.25rem; /* 20px */
+	--text-xl: 1.5rem; /* 24px */
+	--text-2xl: 2rem; /* 32px */
+	--text-3xl: 2.25rem; /* 36px - NEW: Para títulos grandes */
+
+	/* 🔤 PESOS DE FONTE */
+	--font-light: 300; /* NEW: Para textos delicados */
+	--font-normal: 400;
+	--font-medium: 500; /* NEW: Entre normal e semibold */
+	--font-semibold: 600;
+	--font-bold: 700;
+	--font-black: 900; /* NEW: Para títulos impactantes */
+
+	/* 📐 ALTURAS DE LINHA */
+	--leading-tight: 1.2; /* headings */
+	--leading-normal: 1.5; /* body */
+	--leading-relaxed: 1.7; /* reading */
+
+	/* 🎭 SOMBRAS PROGRESSIVAS */
+	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+	--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+	--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* NEW: Sombra dramática */
+
+	/* 🔄 BORDER RADIUS */
+	--radius-sm: 0.25rem; /* 4px */
+	--radius-md: 0.5rem; /* 8px */
+	--radius-lg: 0.75rem; /* 12px */
+	--radius-xl: 1rem; /* 16px */
+	--radius-2xl: 1.5rem; /* 24px - NEW: Para cards especiais */
+
+	/* ⚡ TIMING DE TRANSIÇÕES */
+	--transition-fast: 150ms ease-in-out;
+	--transition-normal: 300ms ease-in-out;
+	--transition-slow: 500ms ease-in-out;
+	--transition-bounce: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55); /* NEW: Efeito bounce */
+
+	/* 📱 BREAKPOINTS */
+	--mobile: 640px;
+	--tablet: 768px;
+	--desktop: 1024px;
+	--container-max: 1200px;
+
+	/* 🎨 GRADIENTES TEMÁTICOS */
+	--gradient-campo: linear-gradient(
 		135deg,
-		var(--campo-verde-dark) 0%,
-		var(--campo-verde) 50%,
-		var(--campo-verde-light) 100%
+		var(--campo-verde-dark),
+		var(--campo-verde-light)
 	);
+	--gradient-cidade: linear-gradient(
+		135deg,
+		var(--cidade-azul-dark),
+		var(--cidade-azul-light)
+	);
+	--gradient-harvest: linear-gradient(
+		135deg,
+		var(--harvest-dourado-dark),
+		var(--harvest-dourado-light)
+	);
+	--gradient-terra: linear-gradient(
+		135deg,
+		var(--terra-marrom-dark),
+		var(--terra-marrom-light)
+	);
+	--gradient-ceu: linear-gradient(
+		135deg,
+		var(--ceu-azul),
+		var(--ceu-azul-light)
+	);
+}
+/**
+ * 🏗️ AGRI-FRAMEWORK - Components
+ * Componentes base semanticamente organizados
+ * Reset mínimo + Layout System + Core Components
+ */
+
+/* ⚡ RESET MÍNIMO E OTIMIZADO */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: system-ui, -apple-system, sans-serif;
+	line-height: var(--leading-normal);
+	color: var(--preto-suave);
+	background-color: var(--branco);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* 📦 LAYOUT SYSTEM RESPONSIVO */
+.container {
+	width: 100%;
+	max-width: var(--container-max);
+	margin: 0 auto;
+	padding: 0 var(--space-4);
+}
+
+@media (min-width: 768px) {
+	.container {
+		padding: 0 var(--space-6);
+	}
+}
+
+/* 🌐 GRID SYSTEM SIMPLES */
+.grid-2 {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+	.grid-2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.grid-3 {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+	.grid-3 {
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--space-6);
+	}
+}
+
+@media (min-width: 1024px) {
+	.grid-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* 🃏 AGRI-CARD - Card Principal */
+.agri-card {
+	background: var(--branco);
+	border-radius: var(--radius-lg);
+	padding: var(--space-6);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid var(--cinza-claro);
+	/* 🎭 Transições suaves */
+	transition: all var(--transition-normal);
+	will-change: transform, box-shadow, border-color;
+}
+
+.agri-card:hover {
+	transform: translateY(-4px) scale(1.01);
+	box-shadow: var(--shadow-lg);
+	border-color: var(--campo-verde-light);
+}
+
+/* 🔴 AGRI-BTN - Botão Principal */
+.agri-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--space-3) var(--space-6);
+	background: var(--campo-verde);
 	color: var(--branco);
-	padding: var(--space-16) 0;
-	text-align: center;
+	border: none;
+	border-radius: var(--radius-md);
+	font-weight: var(--font-medium);
+	text-decoration: none;
+	cursor: pointer;
+	font-size: var(--text-sm);
+	line-height: 1;
+	/* 🎭 Transições refinadas */
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
 	position: relative;
 	overflow: hidden;
 }
 
-.agri-hero::before {
+.agri-btn::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left var(--transition-normal);
+}
+
+.agri-btn:hover {
+	background: var(--campo-verde-dark);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: var(--shadow-lg);
+}
+
+.agri-btn:hover::before {
+	left: 100%;
+}
+
+.agri-btn:active {
+	transform: translateY(0) scale(0.98);
+}
+
+/* 🔵 Botão Cidade */
+.agri-btn-cidade {
+	padding: var(--space-3) var(--space-6);
+	background: var(--cidade-azul);
+	color: var(--branco);
+	border: none;
+	border-radius: var(--radius-md);
+	font-weight: var(--font-medium);
+	text-decoration: none;
+	cursor: pointer;
+	font-size: var(--text-sm);
+	line-height: 1;
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
+}
+
+.agri-btn-cidade::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left var(--transition-normal);
+}
+
+.agri-btn-cidade:hover {
+	background: var(--cidade-azul-dark);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: var(--shadow-md);
+}
+
+.agri-btn-cidade:hover::before {
+	left: 100%;
+}
+
+.agri-btn-cidade:active {
+	transform: translateY(0) scale(0.98);
+}
+
+/* 🟡 Botão Harvest */
+.agri-btn-harvest {
+	padding: var(--space-3) var(--space-6);
+	background: var(--harvest-dourado);
+	color: var(--branco);
+	border: none;
+	border-radius: var(--radius-md);
+	font-weight: var(--font-medium);
+	text-decoration: none;
+	cursor: pointer;
+	font-size: var(--text-sm);
+	line-height: 1;
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
+}
+
+.agri-btn-harvest::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left var(--transition-normal);
+}
+
+.agri-btn-harvest:hover {
+	background: var(--harvest-dourado-dark);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.agri-btn-harvest:hover::before {
+	left: 100%;
+}
+
+.agri-btn-harvest:active {
+	transform: translateY(0) scale(0.98);
+}
+
+/* 🟤 Botão Terra */
+.agri-btn-terra {
+	background: var(--terra-marrom);
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
+}
+
+.agri-btn-terra:hover {
+	background: var(--terra-marrom-dark);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: var(--shadow-md);
+}
+
+/* NEW: Botão Outline */
+.agri-btn-outline {
+	background: transparent;
+	border: 2px solid var(--campo-verde);
+	color: var(--campo-verde);
+}
+
+.agri-btn-outline:hover {
+	background: var(--campo-verde);
+	color: var(--branco);
+}
+
+/* 🏷️ ETIQUETAS SEMÂNTICAS DO AGRONEGÓCIO */
+.etiqueta-harvest {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--harvest-dourado);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
+}
+
+.etiqueta-harvest:hover {
+	transform: translateY(-1px);
+}
+
+/* 🎨 CLASSE BASE para etiquetas customizadas */
+.etiqueta-custom {
+	display: inline-flex !important;
+	align-items: center !important;
+	padding: var(--space-1) var(--space-3) !important;
+	font-size: var(--text-xs) !important;
+	font-weight: var(--font-semibold) !important;
+	border-radius: var(--radius-xl) !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.05em !important;
+}
+
+/* 🌱 ETIQUETAS DE STATUS SEMÂNTICAS */
+.etiqueta-crescimento {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--sucesso-verde);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
+}
+
+.etiqueta-atencao {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--alerta-amarelo);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
+}
+
+.etiqueta-praga {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--erro-vermelho);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
+}
+
+.etiqueta-irrigacao {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--info-azul);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
+}
+
+.etiqueta-solo {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--terra-marrom);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
+}
+
+/* 🏷️ AGRI-BADGE - Etiquetas Elegantes */
+.agri-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--harvest-dourado);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* 🎨 CLASSE BASE para badges customizadas */
+.agri-badge-custom {
+	display: inline-flex !important;
+	align-items: center !important;
+	padding: var(--space-1) var(--space-3) !important;
+	font-size: var(--text-xs) !important;
+	font-weight: var(--font-semibold) !important;
+	border-radius: var(--radius-xl) !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.05em !important;
+}
+
+/* NEW: Variações de Badges */
+.agri-badge-sucesso {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--sucesso-verde);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.agri-badge-alerta {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--alerta-amarelo);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.agri-badge-erro {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--erro-vermelho);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.agri-badge-info {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--info-azul);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* NEW: Badge Terra */
+.agri-badge-terra {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--space-1) var(--space-3);
+	background: var(--terra-marrom);
+	color: var(--branco);
+	font-size: var(--text-xs);
+	font-weight: var(--font-semibold);
+	border-radius: var(--radius-xl);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* ➗ TECH-DIVIDER - Separador de Seções */
+.tech-divider {
+	height: 1px;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		var(--cinza-medio) 20%,
+		var(--cinza-medio) 80%,
+		transparent
+	);
+	margin: var(--space-8) 0;
+	position: relative;
+}
+
+.tech-divider::after {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 4px;
+	height: 4px;
+	background: var(--tech-roxo);
+	border-radius: 50%;
+}
+
+/* NEW: Divider Temático */
+.campo-divider {
+	height: 2px;
+	background: var(--gradient-campo);
+	margin: var(--space-8) 0;
+	border-radius: var(--radius-sm);
+}
+
+/* 📝 SISTEMA DE TIPOGRAFIA */
+.hero-title {
+	font-size: var(--text-2xl);
+	font-weight: var(--font-bold);
+	line-height: var(--leading-tight);
+	color: var(--campo-verde-dark);
+	margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+	.hero-title {
+		font-size: 2.5rem;
+	}
+}
+
+.section-title {
+	font-size: var(--text-xl);
+	font-weight: var(--font-semibold);
+	line-height: var(--leading-tight);
+	color: var(--campo-verde);
+	margin-bottom: var(--space-3);
+}
+
+.body-text {
+	font-size: var(--text-base);
+	line-height: var(--leading-relaxed);
+	color: var(--cinza-escuro);
+	margin-bottom: var(--space-4);
+}
+
+.caption {
+	font-size: var(--text-sm);
+	color: var(--tech-cinza);
+	line-height: var(--leading-normal);
+}
+
+/* NEW: Tipografia Expandida */
+.mega-title {
+	font-size: var(--text-3xl);
+	font-weight: var(--font-black);
+	line-height: var(--leading-tight);
+	color: var(--campo-verde-dark);
+	margin-bottom: var(--space-6);
+}
+
+@media (min-width: 768px) {
+	.mega-title {
+		font-size: 3rem;
+	}
+}
+
+.subtitle {
+	font-size: var(--text-lg);
+	font-weight: var(--font-medium);
+	color: var(--tech-cinza);
+	margin-bottom: var(--space-4);
+}
+
+.text-delicate {
+	font-weight: var(--font-light);
+	color: var(--tech-cinza);
+}
+
+/* NEW: COMPONENTES ESPECIALIZADOS */
+
+/* 🌱 Card de Agricultura */
+.agri-farm-card {
+	background: var(--campo-verde-soft);
+	border: 2px solid var(--campo-verde-light);
+	border-radius: var(--radius-xl);
+	padding: var(--space-6);
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-normal);
+}
+
+.agri-farm-card::before {
+	content: "🌱";
+	position: absolute;
+	top: var(--space-4);
+	right: var(--space-4);
+	font-size: var(--text-xl);
+	opacity: 0.3;
+}
+
+.agri-farm-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-xl);
+	border-color: var(--campo-verde);
+}
+
+/* 🏙️ Card de Cidade */
+.agri-city-card {
+	background: var(--cidade-azul-soft);
+	border: 2px solid var(--cidade-azul-light);
+	border-radius: var(--radius-xl);
+	padding: var(--space-6);
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-normal);
+}
+
+.agri-city-card::before {
+	content: "🏙️";
+	position: absolute;
+	top: var(--space-4);
+	right: var(--space-4);
+	font-size: var(--text-xl);
+	opacity: 0.3;
+}
+
+.agri-city-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-xl);
+	border-color: var(--cidade-azul);
+}
+
+/* 🌾 Card de Colheita */
+.agri-harvest-card {
+	background: var(--harvest-dourado-soft);
+	border: 2px solid var(--harvest-dourado-light);
+	border-radius: var(--radius-xl);
+	padding: var(--space-6);
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-normal);
+}
+
+.agri-harvest-card::before {
+	content: "🌾";
+	position: absolute;
+	top: var(--space-4);
+	right: var(--space-4);
+	font-size: var(--text-xl);
+	opacity: 0.3;
+}
+
+.agri-harvest-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-xl);
+	border-color: var(--harvest-dourado);
+}
+
+/* NEW: Alert Box de Status */
+.agri-alert {
+	padding: var(--space-4);
+	border-radius: var(--radius-md);
+	margin-bottom: var(--space-4);
+	border-left: 4px solid;
+	font-weight: var(--font-medium);
+}
+
+.agri-alert-sucesso {
+	background: var(--campo-verde-soft);
+	border-color: var(--sucesso-verde);
+	color: var(--campo-verde-dark);
+}
+
+.agri-alert-alerta {
+	background: var(--harvest-dourado-soft);
+	border-color: var(--alerta-amarelo);
+	color: var(--harvest-dourado-dark);
+}
+
+.agri-alert-erro {
+	background: #fef2f2;
+	border-color: var(--erro-vermelho);
+	color: #991b1b;
+}
+
+.agri-alert-info {
+	background: var(--cidade-azul-soft);
+	border-color: var(--info-azul);
+	color: var(--cidade-azul-dark);
+}
+
+/* 🌱 Botão Campo */
+.agri-btn-campo {
+	padding: var(--space-3) var(--space-6);
+	background: var(--campo-verde);
+	color: var(--branco);
+	border: none;
+	border-radius: var(--radius-md);
+	font-weight: var(--font-medium);
+	text-decoration: none;
+	cursor: pointer;
+	font-size: var(--text-sm);
+	line-height: 1;
+	position: relative;
+	overflow: hidden;
+	transition: all var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform, background-color, box-shadow;
+}
+
+.agri-btn-campo::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.2),
+		transparent
+	);
+	transition: left var(--transition-normal);
+}
+
+.agri-btn-campo:hover {
+	background: var(--campo-verde-dark);
+	transform: translateY(-2px) scale(1.02);
+	box-shadow: var(--shadow-lg);
+}
+
+.agri-btn-campo:hover::before {
+	left: 100%;
+}
+
+.agri-btn-campo:active {
+	transform: translateY(0) scale(0.98);
+}
+/**
+ * 🎨 AGRI-FRAMEWORK - Utilities
+ * Classes utilitárias com naming semântico
+ * Espaçamento + Cores + Display + Alinhamento
+ */
+
+/* 📏 CLASSES DE ESPAÇAMENTO */
+/* Margin Top */
+.mt-2 {
+	margin-top: var(--space-2);
+}
+.mt-4 {
+	margin-top: var(--space-4);
+}
+.mt-6 {
+	margin-top: var(--space-6);
+}
+.mt-8 {
+	margin-top: var(--space-8);
+}
+
+/* Margin Bottom */
+.mb-2 {
+	margin-bottom: var(--space-2);
+}
+.mb-4 {
+	margin-bottom: var(--space-4);
+}
+.mb-6 {
+	margin-bottom: var(--space-6);
+}
+.mb-8 {
+	margin-bottom: var(--space-8);
+}
+
+/* Margin Y (top + bottom) */
+.my-2 {
+	margin-top: var(--space-2);
+	margin-bottom: var(--space-2);
+}
+.my-4 {
+	margin-top: var(--space-4);
+	margin-bottom: var(--space-4);
+}
+.my-6 {
+	margin-top: var(--space-6);
+	margin-bottom: var(--space-6);
+}
+.my-8 {
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
+}
+
+/* Padding */
+.p-2 {
+	padding: var(--space-2);
+}
+.p-4 {
+	padding: var(--space-4);
+}
+.p-6 {
+	padding: var(--space-6);
+}
+.p-8 {
+	padding: var(--space-8);
+}
+
+/* Padding X e Y */
+.px-4 {
+	padding-left: var(--space-4);
+	padding-right: var(--space-4);
+}
+.px-6 {
+	padding-left: var(--space-6);
+	padding-right: var(--space-6);
+}
+.py-4 {
+	padding-top: var(--space-4);
+	padding-bottom: var(--space-4);
+}
+.py-6 {
+	padding-top: var(--space-6);
+	padding-bottom: var(--space-6);
+}
+.py-8 {
+	padding-top: var(--space-8);
+	padding-bottom: var(--space-8);
+}
+
+/* 🌈 CORES TEMÁTICAS PRINCIPAIS */
+/* Text Colors */
+.text-campo {
+	color: var(--campo-verde);
+}
+.text-cidade {
+	color: var(--cidade-azul);
+}
+.text-harvest {
+	color: var(--harvest-dourado);
+}
+.text-tech {
+	color: var(--tech-roxo);
+}
+.text-neutral {
+	color: var(--tech-cinza);
+}
+.text-dark {
+	color: var(--preto-suave);
+}
+
+/* FIXED: Cores básicas com especificidade correta */
+.text-white {
+	color: var(--branco, #ffffff) !important;
+}
+.text-black {
+	color: var(--preto-suave, #0f172a) !important;
+}
+
+/* NEW: Cores Complementares */
+.text-terra {
+	color: var(--terra-marrom);
+}
+.text-ceu {
+	color: var(--ceu-azul);
+}
+.text-sol {
+	color: var(--sol-amarelo);
+}
+
+/* NEW: Cores de Status */
+.text-sucesso {
+	color: var(--sucesso-verde);
+}
+.text-alerta {
+	color: var(--alerta-amarelo);
+}
+.text-erro {
+	color: var(--erro-vermelho);
+}
+.text-info {
+	color: var(--info-azul);
+}
+
+/* Background Colors */
+.bg-campo {
+	background-color: var(--campo-verde);
+}
+.bg-campo-light {
+	background-color: var(--campo-verde-light);
+}
+.bg-campo-soft {
+	background-color: var(--campo-verde-soft);
+}
+.bg-cidade {
+	background-color: var(--cidade-azul);
+}
+.bg-cidade-soft {
+	background-color: var(--cidade-azul-soft);
+}
+.bg-harvest {
+	background-color: var(--harvest-dourado);
+}
+.bg-harvest-soft {
+	background-color: var(--harvest-dourado-soft);
+}
+.bg-tech {
+	background-color: var(--tech-roxo);
+}
+.bg-light {
+	background-color: var(--cinza-claro);
+}
+.bg-white {
+	background-color: var(--branco);
+}
+
+/* NEW: Backgrounds Complementares */
+.bg-terra {
+	background-color: var(--terra-marrom);
+}
+.bg-terra-soft {
+	background-color: var(--terra-marrom-soft);
+}
+.bg-ceu {
+	background-color: var(--ceu-azul);
+}
+.bg-ceu-soft {
+	background-color: var(--ceu-azul-soft);
+}
+.bg-sol {
+	background-color: var(--sol-amarelo);
+}
+.bg-sol-soft {
+	background-color: var(--sol-amarelo-soft);
+}
+
+/* NEW: Backgrounds de Status */
+.bg-sucesso {
+	background-color: var(--sucesso-verde);
+}
+.bg-alerta {
+	background-color: var(--alerta-amarelo);
+}
+.bg-erro {
+	background-color: var(--erro-vermelho);
+}
+.bg-info {
+	background-color: var(--info-azul);
+}
+
+/* NEW: Classes de Gradientes */
+.bg-gradient-campo {
+	background: var(--gradient-campo);
+}
+.bg-gradient-cidade {
+	background: var(--gradient-cidade);
+}
+.bg-gradient-harvest {
+	background: var(--gradient-harvest);
+}
+.bg-gradient-terra {
+	background: var(--gradient-terra);
+}
+.bg-gradient-ceu {
+	background: var(--gradient-ceu);
+}
+
+/* 📱 CLASSES DE DISPLAY */
+.flex {
+	display: flex;
+}
+.grid {
+	display: grid;
+}
+.block {
+	display: block;
+}
+.inline-block {
+	display: inline-block;
+}
+.hidden {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.hidden-mobile {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.hidden-desktop {
+		display: none;
+	}
+}
+
+/* 🎯 CLASSES DE ALINHAMENTO FLEXBOX */
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.flex-start {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.flex-end {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-col-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/* NEW: Flex Wrap */
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-nowrap {
+	flex-wrap: nowrap;
+}
+
+/* 📐 CLASSES DE ALINHAMENTO DE TEXTO */
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+
+/* 🌊 CLASSES DE WIDTH E HEIGHT */
+.w-full {
+	width: 100%;
+}
+.h-full {
+	height: 100%;
+}
+.w-auto {
+	width: auto;
+}
+.h-auto {
+	height: auto;
+}
+
+/* NEW: Larguras específicas */
+.w-1-2 {
+	width: 50%;
+}
+.w-1-3 {
+	width: 33.333%;
+}
+.w-2-3 {
+	width: 66.666%;
+}
+
+/* 📊 CLASSES DE POSICIONAMENTO */
+.relative {
+	position: relative;
+}
+.absolute {
+	position: absolute;
+}
+.fixed {
+	position: fixed;
+}
+.sticky {
+	position: sticky;
+}
+
+/* 🎭 CLASSES DE EFEITOS VISUAIS */
+.shadow-sm {
+	box-shadow: var(--shadow-sm);
+}
+.shadow-md {
+	box-shadow: var(--shadow-md);
+}
+.shadow-lg {
+	box-shadow: var(--shadow-lg);
+}
+.shadow-xl {
+	box-shadow: var(--shadow-xl);
+}
+.shadow-2xl {
+	box-shadow: var(--shadow-2xl);
+}
+
+.rounded {
+	border-radius: var(--radius-md);
+}
+.rounded-lg {
+	border-radius: var(--radius-lg);
+}
+.rounded-xl {
+	border-radius: var(--radius-xl);
+}
+.rounded-2xl {
+	border-radius: var(--radius-2xl);
+}
+.rounded-full {
+	border-radius: 50%;
+}
+
+/* 🔄 CLASSES DE OVERFLOW */
+.overflow-hidden {
+	overflow: hidden;
+}
+.overflow-auto {
+	overflow: auto;
+}
+
+/* ⚡ CLASSES DE TRANSIÇÃO */
+.transition {
+	transition: all var(--transition-normal);
+}
+.transition-fast {
+	transition: all var(--transition-fast);
+}
+.transition-slow {
+	transition: all var(--transition-slow);
+}
+.transition-bounce {
+	transition: all var(--transition-bounce);
+}
+
+/* 🎯 CLASSES DE CURSOR */
+.cursor-pointer {
+	cursor: pointer;
+}
+.cursor-default {
+	cursor: default;
+}
+
+/* NEW: Classes de Opacidade */
+.opacity-0 {
+	opacity: 0;
+}
+.opacity-50 {
+	opacity: 0.5;
+}
+.opacity-75 {
+	opacity: 0.75;
+}
+.opacity-90 {
+	opacity: 0.9;
+}
+.opacity-100 {
+	opacity: 1;
+}
+
+/* NEW: Classes de Z-Index */
+.z-10 {
+	z-index: 10;
+}
+.z-20 {
+	z-index: 20;
+}
+.z-50 {
+	z-index: 50;
+}
+
+/* NEW: Classes para listas */
+.list-none {
+	list-style: none;
+}
+.list-disc {
+	list-style: disc;
+}
+
+/* NEW: Classes de margin específicas */
+.ml-4 {
+	margin-left: var(--space-4);
+}
+.mr-4 {
+	margin-right: var(--space-4);
+}
+
+/* NEW: Classes de padding específicas */
+.p-0 {
+	padding: 0;
+}
+.pl-8 {
+	padding-left: var(--space-8);
+}
+
+/* NEW: Classes para borders temáticas */
+.border-left-campo {
+	border-left: 3px solid var(--campo-verde);
+}
+.border-left-cidade {
+	border-left: 3px solid var(--cidade-azul);
+}
+.border-left-harvest {
+	border-left: 3px solid var(--harvest-dourado);
+}
+.border-left-tech {
+	border-left: 3px solid var(--tech-roxo);
+}
+.border-left-terra {
+	border-left: 3px solid var(--terra-marrom);
+}
+.border-left-ceu {
+	border-left: 3px solid var(--ceu-azul);
+}
+
+/* NEW: Classes para cores de texto translúcidas */
+.text-white-90 {
+	color: rgba(255, 255, 255, 0.9);
+}
+.text-white-75 {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+/* NEW: Classes de display específicas */
+.d-flex {
+	display: flex;
+}
+.d-grid {
+	display: grid;
+}
+.d-block {
+	display: block;
+}
+.d-none {
+	display: none;
+}
+
+/* NEW: Classes de gap para flex/grid */
+.gap-2 {
+	gap: var(--space-2);
+}
+.gap-4 {
+	gap: var(--space-4);
+}
+.gap-6 {
+	gap: var(--space-6);
+}
+.gap-8 {
+	gap: var(--space-8);
+}
+
+/* NEW: Classes de grid específicas */
+.grid-2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--space-4);
+}
+
+.grid-3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--space-4);
+}
+
+.grid-auto-fit {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: var(--space-4);
+}
+
+.grid-auto-fit-sm {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: var(--space-4);
+}
+
+.grid-auto-fit-lg {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: var(--space-4);
+}
+
+/* NEW: Classes de container */
+.container-sm {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 var(--space-4);
+}
+
+.container-lg {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 var(--space-4);
+}
+
+/* NEW: Classes de font-family */
+.font-mono {
+	font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+}
+
+/* NEW: Classes específicas para docs */
+.docs-list-item {
+	padding: var(--space-2) 0;
+	padding-left: var(--space-4);
+	margin: var(--space-2) 0;
+}
+
+.bg-docs-light {
+	background: #f8f9fa;
+	padding: var(--space-4);
+	border-radius: var(--radius-md);
+}
+
+/* NEW: Classes de justify-content específicas */
+.justify-center {
+	justify-content: center;
+}
+.justify-between {
+	justify-content: space-between;
+}
+.justify-start {
+	justify-content: flex-start;
+}
+.justify-end {
+	justify-content: flex-end;
+}
+
+/* NEW: Classes de Gradientes Específicos */
+.gradient-agro {
+	background: linear-gradient(
+		135deg,
+		#2e7d32 0%,
+		#4caf50 25%,
+		#8bc34a 50%,
+		#cddc39 75%,
+		#fff176 100%
+	);
+}
+
+.gradient-tech {
+	background: linear-gradient(
+		135deg,
+		#1976d2 0%,
+		#2196f3 25%,
+		#03a9f4 50%,
+		#00bcd4 75%,
+		#009688 100%
+	);
+}
+
+.gradient-harvest {
+	background: linear-gradient(
+		135deg,
+		#ff6f00 0%,
+		#ff8f00 25%,
+		#ffa726 50%,
+		#ffb74d 75%,
+		#ffcc02 100%
+	);
+}
+
+.gradient-sunset {
+	background: linear-gradient(
+		135deg,
+		#ff5722 0%,
+		#ff7043 25%,
+		#ff8a65 50%,
+		#ffab91 75%,
+		#ffccbc 100%
+	);
+}
+
+.gradient-earth {
+	background: linear-gradient(
+		135deg,
+		#3e2723 0%,
+		#5d4037 25%,
+		#795548 50%,
+		#8d6e63 75%,
+		#a1887f 100%
+	);
+}
+
+.gradient-sky {
+	background: linear-gradient(
+		135deg,
+		#0d47a1 0%,
+		#1565c0 25%,
+		#1976d2 50%,
+		#1e88e5 75%,
+		#42a5f5 100%
+	);
+}
+
+.gradient-forest {
+	background: linear-gradient(
+		135deg,
+		#1b5e20 0%,
+		#2e7d32 25%,
+		#388e3c 50%,
+		#43a047 75%,
+		#4caf50 100%
+	);
+}
+
+.gradient-aurora {
+	background: linear-gradient(
+		135deg,
+		#7b1fa2 0%,
+		#8e24aa 25%,
+		#9c27b0 50%,
+		#ab47bc 75%,
+		#ba68c8 100%
+	);
+}
+
+/* NEW: Classes de font-weight */
+.font-light {
+	font-weight: var(--font-light);
+}
+.font-normal {
+	font-weight: var(--font-normal);
+}
+.font-medium {
+	font-weight: var(--font-medium);
+}
+.font-semibold {
+	font-weight: var(--font-semibold);
+}
+.font-bold {
+	font-weight: var(--font-bold);
+}
+.font-black {
+	font-weight: var(--font-black);
+}
+/**
+ * AGRI-FRAMEWORK - Animações e Transições
+ */
+
+/* Keyframes básicos */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideRight {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+}
+
+@keyframes bounce {
+	0%,
+	20%,
+	53%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40%,
+	43% {
+		transform: translateY(-8px);
+	}
+	70% {
+		transform: translateY(-4px);
+	}
+	90% {
+		transform: translateY(-2px);
+	}
+}
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	10%,
+	30%,
+	50%,
+	70%,
+	90% {
+		transform: translateX(-2px);
+	}
+	20%,
+	40%,
+	60%,
+	80% {
+		transform: translateX(2px);
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes glow {
+	0%,
+	100% {
+		box-shadow: 0 0 5px currentColor;
+	}
+	50% {
+		box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+	}
+}
+
+/* Animações Complexas */
+@keyframes morphing {
+	0% {
+		transform: scale(1) rotate(0deg);
+		border-radius: 10px;
+	}
+	25% {
+		transform: scale(1.1) rotate(5deg);
+		border-radius: 20px;
+	}
+	50% {
+		transform: scale(0.9) rotate(-5deg);
+		border-radius: 50px;
+	}
+	75% {
+		transform: scale(1.05) rotate(3deg);
+		border-radius: 30px;
+	}
+	100% {
+		transform: scale(1) rotate(0deg);
+		border-radius: 10px;
+	}
+}
+
+@keyframes floatComplex {
+	0%,
+	100% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	33% {
+		transform: translateY(-10px) rotate(1deg);
+	}
+	66% {
+		transform: translateY(5px) rotate(-1deg);
+	}
+}
+
+@keyframes breathe {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.03);
+		opacity: 0.8;
+	}
+}
+
+@keyframes slideRotate {
+	0% {
+		transform: translateX(-100px) rotate(-180deg);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0) rotate(0deg);
+		opacity: 1;
+	}
+}
+
+@keyframes zoomBounce {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		transform: scale(1.2);
+		opacity: 0.8;
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes ripple {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
+
+@keyframes textGlow {
+	0%,
+	100% {
+		text-shadow: 0 0 5px currentColor;
+	}
+	50% {
+		text-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+	}
+}
+
+@keyframes wave {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes elastic {
+	0% {
+		transform: scale(0);
+	}
+	55% {
+		transform: scale(1.1);
+	}
+	80% {
+		transform: scale(0.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* Classes de animação básicas */
+.anim-fade {
+	animation: fadeIn 0.6s ease-out;
+}
+
+.anim-slide-up {
+	animation: slideUp 0.5s ease-out;
+}
+
+.anim-slide-left {
+	animation: slideLeft 0.5s ease-out;
+}
+
+.anim-slide-right {
+	animation: slideRight 0.5s ease-out;
+}
+
+.anim-scale {
+	animation: scaleIn 0.4s ease-out;
+}
+
+.anim-pulse {
+	animation: pulse 2s infinite;
+}
+
+.anim-bounce {
+	animation: bounce 1s;
+}
+
+.anim-shake {
+	animation: shake 0.5s;
+}
+
+.anim-spin {
+	animation: spin 1s linear infinite;
+}
+
+.anim-glow {
+	animation: glow 2s infinite;
+}
+
+/* Classes de animação complexas */
+.anim-morph {
+	animation: morphing 3s infinite ease-in-out;
+}
+
+.anim-float {
+	animation: floatComplex 6s infinite ease-in-out;
+}
+
+.anim-breathe {
+	animation: breathe 4s infinite ease-in-out;
+}
+
+.anim-slide-rotate {
+	animation: slideRotate 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.anim-zoom-bounce {
+	animation: zoomBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.anim-elastic {
+	animation: elastic 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.anim-text-glow {
+	animation: textGlow 2s infinite ease-in-out;
+}
+
+/* Efeitos de Paralaxe */
+.parallax-container {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	perspective: 1000px;
+}
+
+.parallax-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.parallax-back {
+	transform: translateZ(-2px) scale(3);
+}
+
+.parallax-mid {
+	transform: translateZ(-1px) scale(2);
+}
+
+.parallax-front {
+	transform: translateZ(0);
+}
+
+/* Paralaxe com scroll */
+.parallax-scroll {
+	transition: transform 0.1s ease-out;
+}
+
+/* Efeito Ripple */
+.ripple-effect {
+	position: relative;
+	overflow: hidden;
+}
+
+.ripple-effect::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.3);
+	transform: translate(-50%, -50%);
+	transition: width 0.6s, height 0.6s;
+}
+
+.ripple-effect:active::before {
+	width: 300px;
+	height: 300px;
+}
+
+/* Efeito Wave */
+.wave-effect {
+	position: relative;
+	overflow: hidden;
+}
+
+.wave-effect::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.4),
+		transparent
+	);
+	animation: wave 2s infinite;
+}
+
+/* Hover complexos */
+.hover-3d {
+	transition: all 0.3s ease;
+	transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+	transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+}
+
+.hover-magnetic {
+	transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-magnetic:hover {
+	transform: translate(5px, -5px);
+}
+
+.hover-tilt {
+	transition: transform 0.3s ease;
+}
+
+.hover-tilt:hover {
+	transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+}
+
+.hover-float {
+	transition: all 0.3s ease;
+}
+
+.hover-float:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Delays */
+.delay-1 {
+	animation-delay: 0.1s;
+}
+.delay-2 {
+	animation-delay: 0.2s;
+}
+.delay-3 {
+	animation-delay: 0.3s;
+}
+.delay-4 {
+	animation-delay: 0.4s;
+}
+.delay-5 {
+	animation-delay: 0.5s;
+}
+
+/* Durações */
+.duration-fast {
+	animation-duration: 0.2s;
+}
+.duration-normal {
+	animation-duration: 0.5s;
+}
+.duration-slow {
+	animation-duration: 1s;
+}
+.duration-ultra-slow {
+	animation-duration: 3s;
+}
+
+/* Hover effects simples */
+.hover-lift {
+	transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+	transform: translateY(-3px);
+}
+
+.hover-scale {
+	transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+	transform: scale(1.05);
+}
+
+.hover-glow {
+	transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+	box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+}
+
+.hover-fade {
+	transition: opacity 0.2s ease;
+}
+
+.hover-fade:hover {
+	opacity: 0.7;
+}
+
+/* Transições básicas */
+.transition-all {
+	transition: all 0.3s ease;
+}
+
+.transition-colors {
+	transition: background-color 0.2s ease, border-color 0.2s ease,
+		color 0.2s ease;
+}
+
+.transition-transform {
+	transition: transform 0.2s ease;
+}
+
+.transition-opacity {
+	transition: opacity 0.2s ease;
+}
+
+/* Estados de loading */
+.loading {
+	position: relative;
+	color: transparent;
+}
+
+.loading::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 16px;
+	height: 16px;
+	border: 2px solid #e5e5e5;
+	border-top: 2px solid var(--campo-verde);
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+/* Efeitos de entrada por scroll */
+.scroll-hidden {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.6s ease;
+}
+
+.scroll-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Focus states */
+.focus-ring:focus {
+	outline: 2px solid var(--cidade-azul);
+	outline-offset: 2px;
+}
+
+/* Disabled states */
+.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+/* Micro interações para forms */
+.input-smooth {
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-smooth:focus {
+	border-color: var(--campo-verde);
+	box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* Efeitos de background animados */
+.bg-gradient-move {
+	background: linear-gradient(
+		-45deg,
+		var(--campo-verde),
+		var(--cidade-azul),
+		var(--harvest-dourado),
+		var(--terra-marrom)
+	);
+	background-size: 400% 400%;
+	animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Efeito de typing */
+.typing-effect {
+	overflow: hidden;
+	border-right: 2px solid var(--campo-verde);
+	white-space: nowrap;
+	animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: var(--campo-verde);
+	}
+}
+
+/* Efeitos de partículas CSS */
+.particles-container {
+	position: relative;
+	overflow: hidden;
+}
+
+.particles-container::before,
+.particles-container::after {
+	content: "";
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	background: currentColor;
+	border-radius: 50%;
+	opacity: 0.6;
+	animation: particles 8s infinite linear;
+}
+
+.particles-container::before {
+	top: 10%;
+	left: 10%;
+	animation-delay: 0s;
+}
+
+.particles-container::after {
+	top: 60%;
+	right: 20%;
+	animation-delay: 2s;
+}
+
+@keyframes particles {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 0;
+	}
+	10% {
+		opacity: 0.6;
+	}
+	90% {
+		opacity: 0.6;
+	}
+	100% {
+		transform: translateY(-100vh) rotate(360deg);
+		opacity: 0;
+	}
+}
+
+/* Efeito de ondas orgânicas */
+.organic-wave {
+	position: relative;
+	overflow: hidden;
+}
+
+.organic-wave::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		rgba(255, 255, 255, 0.1) 25%,
+		rgba(255, 255, 255, 0.3) 50%,
+		rgba(255, 255, 255, 0.1) 75%,
+		transparent 100%
+	);
+	animation: organicWave 3s infinite ease-in-out;
+}
+
+@keyframes organicWave {
+	0% {
+		left: -100%;
+		transform: skewX(0deg);
+	}
+	50% {
+		transform: skewX(15deg);
+	}
+	100% {
+		left: 100%;
+		transform: skewX(0deg);
+	}
+}
+
+/* Efeito de respiração complexa */
+.breathe-complex {
+	animation: breatheComplex 6s infinite ease-in-out;
+}
+
+@keyframes breatheComplex {
+	0%,
+	100% {
+		transform: scale(1) rotate(0deg);
+		filter: hue-rotate(0deg);
+	}
+	25% {
+		transform: scale(1.02) rotate(1deg);
+		filter: hue-rotate(90deg);
+	}
+	50% {
+		transform: scale(1.05) rotate(0deg);
+		filter: hue-rotate(180deg);
+	}
+	75% {
+		transform: scale(1.02) rotate(-1deg);
+		filter: hue-rotate(270deg);
+	}
+}
+
+/* Efeito de líquido */
+.liquid-effect {
+	position: relative;
+	border-radius: 50px;
+	transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.liquid-effect:hover {
+	border-radius: 20px;
+	transform: scale(1.1);
+}
+
+.liquid-effect::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 0.3) 0%,
+		transparent 70%
+	);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.6s ease;
+}
+
+.liquid-effect:hover::before {
+	width: 200%;
+	height: 200%;
+}
+
+/* Efeito de fragmentação */
+.fragment-effect {
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.fragment-effect:hover {
+	animation: fragment 0.6s ease-in-out;
+}
+
+@keyframes fragment {
+	0% {
+		transform: scale(1);
+		filter: blur(0px);
+	}
+	50% {
+		transform: scale(1.1) rotate(2deg);
+		filter: blur(1px);
+		box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1), -5px -5px 0px rgba(0, 0, 0, 0.1),
+			5px -5px 0px rgba(0, 0, 0, 0.1), -5px 5px 0px rgba(0, 0, 0, 0.1);
+	}
+	100% {
+		transform: scale(1);
+		filter: blur(0px);
+	}
+}
+
+/* Classes de combinação */
+.combo-morph-float {
+	animation: morphing 4s infinite ease-in-out,
+		floatComplex 6s infinite ease-in-out;
+}
+
+.combo-breathe-glow {
+	animation: breathe 3s infinite ease-in-out, glow 2s infinite ease-in-out;
+}
+
+/* Efeitos de texto avançados */
+.text-shadow-dynamic {
+	animation: dynamicShadow 4s infinite ease-in-out;
+}
+
+@keyframes dynamicShadow {
+	0%,
+	100% {
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	}
+	25% {
+		text-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+	}
+	50% {
+		text-shadow: 2px -2px 12px rgba(0, 0, 0, 0.5);
+	}
+	75% {
+		text-shadow: -2px -2px 8px rgba(0, 0, 0, 0.4);
+	}
+}
+
+/* Paralaxe CSS puro com transform 3D */
+.parallax-scene {
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	perspective: 1px;
+	transform-style: preserve-3d;
+}
+
+.parallax-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.parallax-layer-base {
+	transform: translateZ(0);
+}
+
+.parallax-layer-back {
+	transform: translateZ(-1px) scale(2);
+}
+
+.parallax-layer-mid {
+	transform: translateZ(-0.5px) scale(1.5);
+}
+
+.parallax-layer-front {
+	transform: translateZ(0.5px) scale(0.5);
+}
+
+/* Background paralaxe com background-attachment */
+.bg-parallax {
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.bg-parallax-slow {
+	background-attachment: fixed;
+	background-size: 120% 120%;
+	background-position: center;
+}
+
+/* Pseudo paralaxe com transform */
+.pseudo-parallax {
+	position: relative;
+	overflow: hidden;
+}
+
+.pseudo-parallax::before {
+	content: "";
+	position: absolute;
+	top: -20%;
+	left: -20%;
+	width: 140%;
+	height: 140%;
+	background: inherit;
+	transform: translateZ(-1px) scale(2);
+	z-index: -1;
+}
+
+/* Efeito de profundidade em camadas */
+.depth-layers {
+	position: relative;
+	transform-style: preserve-3d;
+	perspective: 1000px;
+}
+
+.depth-layer-1 {
+	transform: translateZ(0px);
+}
+
+.depth-layer-2 {
+	transform: translateZ(20px);
+}
+
+.depth-layer-3 {
+	transform: translateZ(40px);
+}
+
+.depth-layer-4 {
+	transform: translateZ(60px);
+}
+
+.depth-layer-5 {
+	transform: translateZ(80px);
+}
+
+/* Hover paralaxe com CSS */
+.hover-depth {
+	transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+	transform-style: preserve-3d;
+}
+
+.hover-depth:hover {
+	transform: translateZ(30px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Paralaxe com clip-path */
+.clip-parallax {
+	position: relative;
+	clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+	background: linear-gradient(135deg, var(--campo-verde), var(--cidade-azul));
+}
+
+.clip-parallax::after {
 	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="25" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="25" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-	animation: field-wave 10s infinite ease-in-out;
+	background: linear-gradient(45deg, transparent, var(--harvest-dourado-soft));
+	clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
 }
 
-/* 🎯 CALL-TO-ACTION SECTION */
-.agri-cta {
-	background: var(--harvest-dourado);
-	color: var(--branco);
-	padding: var(--space-12) 0;
-	text-align: center;
-	position: relative;
-}
-
-.agri-cta .agri-btn {
-	background: var(--branco);
-	color: var(--harvest-dourado);
-	font-weight: var(--font-bold);
-	padding: var(--space-4) var(--space-8);
-	font-size: var(--text-lg);
-}
-
-.agri-cta .agri-btn:hover {
-	background: var(--cinza-claro);
-	transform: translateY(-3px) scale(1.05);
-}
-
-/* 🏅 FEATURE CARD ESPECIAL */
-.feature-card {
-	background: var(--branco);
-	padding: var(--space-8);
-	border-radius: var(--radius-xl);
-	box-shadow: var(--shadow-lg);
-	text-align: center;
-	position: relative;
-	border: 2px solid transparent;
-	transition: all var(--transition-normal);
-}
-
-.feature-card::before {
-	content: "";
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	right: -2px;
-	bottom: -2px;
-	background: linear-gradient(
-		45deg,
-		var(--campo-verde),
-		var(--cidade-azul),
-		var(--harvest-dourado)
-	);
-	border-radius: var(--radius-xl);
-	z-index: -1;
+/* Animações de entrada com profundidade */
+.enter-depth {
+	animation: enterDepth 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 	opacity: 0;
-	transition: opacity var(--transition-normal);
 }
 
-.feature-card:hover::before {
-	opacity: 1;
+@keyframes enterDepth {
+	0% {
+		opacity: 0;
+		transform: translateZ(-100px) rotateY(90deg);
+	}
+	100% {
+		opacity: 1;
+		transform: translateZ(0) rotateY(0deg);
+	}
 }
 
-.feature-card:hover {
-	transform: translateY(-10px);
-	box-shadow: var(--shadow-xl);
+/* Efeito isométrico */
+.isometric {
+	transform: rotateX(45deg) rotateY(45deg);
+	transform-style: preserve-3d;
 }
 
-/* 📊 ESTATÍSTICA CARD */
-.stat-card {
-	background: var(--cinza-claro);
-	padding: var(--space-6);
+.isometric-item {
+	background: var(--branco);
+	border: 1px solid var(--cinza-claro);
+	padding: 2rem;
+	margin: 1rem;
+	transform-style: preserve-3d;
+	transition: transform 0.3s ease;
+}
+
+.isometric-item:hover {
+	transform: translateZ(20px);
+}
+
+/* Efeito de cartão flutuante */
+.floating-card {
+	background: var(--branco);
 	border-radius: var(--radius-lg);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1),
+		0 8px 16px rgba(0, 0, 0, 0.1);
+	transform: translateZ(0);
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.floating-card:hover {
+	transform: translateZ(40px) rotateX(5deg);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1),
+		0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Utilities rápidas */
+.no-animation {
+	animation: none !important;
+}
+
+.no-transition {
+	transition: none !important;
+}
+
+/* Efeitos especiais para elementos específicos */
+.card-flip {
+	perspective: 1000px;
+}
+
+.card-flip-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
 	text-align: center;
-	transition: all var(--transition-normal);
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
 }
 
-.stat-number {
-	font-size: var(--text-2xl);
-	font-weight: var(--font-bold);
-	color: var(--campo-verde);
-	display: block;
-	margin-bottom: var(--space-2);
+.card-flip:hover .card-flip-inner {
+	transform: rotateY(180deg);
 }
 
-.stat-label {
-	font-size: var(--text-sm);
-	color: var(--tech-cinza);
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
+.card-flip-front,
+.card-flip-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
 }
 
-/* 🎨 SEÇÃO COM BACKGROUND PATTERN */
-.patterned-section {
-	background: var(--cinza-claro);
-	background-image: radial-gradient(
-			circle at 25% 25%,
-			var(--campo-verde-light) 2px,
-			transparent 2px
-		),
-		radial-gradient(
-			circle at 75% 75%,
-			var(--cidade-azul-light) 1px,
-			transparent 1px
-		);
-	background-size: 50px 50px;
-	background-position: 0 0, 25px 25px;
-}
-
-/**
- * 📱 UTILITÁRIOS RESPONSIVOS EXTRAS
- */
-@media (min-width: 768px) {
-	.md\:grid-4 {
-		grid-template-columns: repeat(4, 1fr);
-	}
-
-	.md\:text-3xl {
-		font-size: 1.875rem;
-	}
-}
-
-@media (min-width: 1024px) {
-	.lg\:grid-5 {
-		grid-template-columns: repeat(5, 1fr);
-	}
+.card-flip-back {
+	transform: rotateY(180deg);
 }

@@ -33,6 +33,24 @@
 	margin-bottom: var(--space-8);
 }
 
+/* Margin Y (top + bottom) */
+.my-2 {
+	margin-top: var(--space-2);
+	margin-bottom: var(--space-2);
+}
+.my-4 {
+	margin-top: var(--space-4);
+	margin-bottom: var(--space-4);
+}
+.my-6 {
+	margin-top: var(--space-6);
+	margin-bottom: var(--space-6);
+}
+.my-8 {
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
+}
+
 /* Padding */
 .p-2 {
 	padding: var(--space-2);
@@ -404,6 +422,9 @@
 .opacity-75 {
 	opacity: 0.75;
 }
+.opacity-90 {
+	opacity: 0.9;
+}
 .opacity-100 {
 	opacity: 1;
 }
@@ -417,4 +438,269 @@
 }
 .z-50 {
 	z-index: 50;
+}
+
+/* NEW: Classes para listas */
+.list-none {
+	list-style: none;
+}
+.list-disc {
+	list-style: disc;
+}
+
+/* NEW: Classes de margin específicas */
+.ml-4 {
+	margin-left: var(--space-4);
+}
+.mr-4 {
+	margin-right: var(--space-4);
+}
+
+/* NEW: Classes de padding específicas */
+.p-0 {
+	padding: 0;
+}
+.pl-8 {
+	padding-left: var(--space-8);
+}
+
+/* NEW: Classes para borders temáticas */
+.border-left-campo {
+	border-left: 3px solid var(--campo-verde);
+}
+.border-left-cidade {
+	border-left: 3px solid var(--cidade-azul);
+}
+.border-left-harvest {
+	border-left: 3px solid var(--harvest-dourado);
+}
+.border-left-tech {
+	border-left: 3px solid var(--tech-roxo);
+}
+.border-left-terra {
+	border-left: 3px solid var(--terra-marrom);
+}
+.border-left-ceu {
+	border-left: 3px solid var(--ceu-azul);
+}
+
+/* NEW: Classes para cores de texto translúcidas */
+.text-white-90 {
+	color: rgba(255, 255, 255, 0.9);
+}
+.text-white-75 {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+/* NEW: Classes de display específicas */
+.d-flex {
+	display: flex;
+}
+.d-grid {
+	display: grid;
+}
+.d-block {
+	display: block;
+}
+.d-none {
+	display: none;
+}
+
+/* NEW: Classes de gap para flex/grid */
+.gap-2 {
+	gap: var(--space-2);
+}
+.gap-4 {
+	gap: var(--space-4);
+}
+.gap-6 {
+	gap: var(--space-6);
+}
+.gap-8 {
+	gap: var(--space-8);
+}
+
+/* NEW: Classes de grid específicas */
+.grid-2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--space-4);
+}
+
+.grid-3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--space-4);
+}
+
+.grid-auto-fit {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: var(--space-4);
+}
+
+.grid-auto-fit-sm {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: var(--space-4);
+}
+
+.grid-auto-fit-lg {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: var(--space-4);
+}
+
+/* NEW: Classes de container */
+.container-sm {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 var(--space-4);
+}
+
+.container-lg {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 var(--space-4);
+}
+
+/* NEW: Classes de font-family */
+.font-mono {
+	font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+}
+
+/* NEW: Classes específicas para docs */
+.docs-list-item {
+	padding: var(--space-2) 0;
+	padding-left: var(--space-4);
+	margin: var(--space-2) 0;
+}
+
+.bg-docs-light {
+	background: #f8f9fa;
+	padding: var(--space-4);
+	border-radius: var(--radius-md);
+}
+
+/* NEW: Classes de justify-content específicas */
+.justify-center {
+	justify-content: center;
+}
+.justify-between {
+	justify-content: space-between;
+}
+.justify-start {
+	justify-content: flex-start;
+}
+.justify-end {
+	justify-content: flex-end;
+}
+
+/* NEW: Classes de Gradientes Específicos */
+.gradient-agro {
+	background: linear-gradient(
+		135deg,
+		#2e7d32 0%,
+		#4caf50 25%,
+		#8bc34a 50%,
+		#cddc39 75%,
+		#fff176 100%
+	);
+}
+
+.gradient-tech {
+	background: linear-gradient(
+		135deg,
+		#1976d2 0%,
+		#2196f3 25%,
+		#03a9f4 50%,
+		#00bcd4 75%,
+		#009688 100%
+	);
+}
+
+.gradient-harvest {
+	background: linear-gradient(
+		135deg,
+		#ff6f00 0%,
+		#ff8f00 25%,
+		#ffa726 50%,
+		#ffb74d 75%,
+		#ffcc02 100%
+	);
+}
+
+.gradient-sunset {
+	background: linear-gradient(
+		135deg,
+		#ff5722 0%,
+		#ff7043 25%,
+		#ff8a65 50%,
+		#ffab91 75%,
+		#ffccbc 100%
+	);
+}
+
+.gradient-earth {
+	background: linear-gradient(
+		135deg,
+		#3e2723 0%,
+		#5d4037 25%,
+		#795548 50%,
+		#8d6e63 75%,
+		#a1887f 100%
+	);
+}
+
+.gradient-sky {
+	background: linear-gradient(
+		135deg,
+		#0d47a1 0%,
+		#1565c0 25%,
+		#1976d2 50%,
+		#1e88e5 75%,
+		#42a5f5 100%
+	);
+}
+
+.gradient-forest {
+	background: linear-gradient(
+		135deg,
+		#1b5e20 0%,
+		#2e7d32 25%,
+		#388e3c 50%,
+		#43a047 75%,
+		#4caf50 100%
+	);
+}
+
+.gradient-aurora {
+	background: linear-gradient(
+		135deg,
+		#7b1fa2 0%,
+		#8e24aa 25%,
+		#9c27b0 50%,
+		#ab47bc 75%,
+		#ba68c8 100%
+	);
+}
+
+/* NEW: Classes de font-weight */
+.font-light {
+	font-weight: var(--font-light);
+}
+.font-normal {
+	font-weight: var(--font-normal);
+}
+.font-medium {
+	font-weight: var(--font-medium);
+}
+.font-semibold {
+	font-weight: var(--font-semibold);
+}
+.font-bold {
+	font-weight: var(--font-bold);
+}
+.font-black {
+	font-weight: var(--font-black);
 }
